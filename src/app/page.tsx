@@ -150,7 +150,7 @@ export default function Home() {
               {[
                 { label: "Huawei Seeds for the Future", value: "2024 Cohort" },
                 { label: "Open source ranking", value: "Top 5% Uganda" },
-                { label: "Expo showing", value: "Makerere Uni 2024" },
+                { label: "Expo showing", value: "Cavendish Uni 2024" },
                 { label: "Live products", value: "3 in market" },
               ].map((item) => (
                 <div key={item.label} className={styles.tractionItem}>

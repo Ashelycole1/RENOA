@@ -23,9 +23,9 @@ export default function AboutPage() {
             <h2 className={styles.sectionLabel}>Origin</h2>
             <div className={styles.sectionContent}>
               <p>
-                RENOA started with six students at Makerere University who kept
-                building things after the course ended. Not for grades — for the
-                problem in front of them. Mobile money systems that didn't talk
+                RENOA started with six students at Cavendish University who kept
+                seeing the same pattern: Western software paradigms failing
+                when applied to East African realities. Mobile money systems that didn't talk
                 to each other. Mental health access that required a car and a
                 referral. Loyalty programs that only big chains could afford.
               </p>
@@ -70,8 +70,8 @@ export default function AboutPage() {
                   desc: "Selected as part of the 2024 cohort — Huawei's flagship global ICT talent programme.",
                 },
                 {
-                  title: "Makerere Innovation Expo",
-                  desc: "Rafiki shown at the university's annual innovation showcase. Validated by faculty and industry judges.",
+                  title: "Cavendish Innovation Expo",
+                  desc: "Rafiki showcased to university administration.",
                 },
                 {
                   title: "Open Source Ranking",

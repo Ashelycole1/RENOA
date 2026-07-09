@@ -25,9 +25,9 @@ export const projects: Project[] = [
     founderIndices: [1, 0],
     liveLink: "https://rafiki.app",
     stack: ["Next.js", "Python", "AWS", "Africa's Talking"],
-    problem: "Mental health resources in Uganda are scarce — 1 psychiatrist per 1.5 million people. Most people can't access or afford professional help, and stigma makes it harder.",
-    build: "We built a multi-turn conversational agent using LLM APIs, grounded in culturally relevant context. Africa's Talking handles SMS fallback for users without data. The system routes critical situations to human counselors.",
-    result: "Shown at Makerere University Innovation Expo. Active users across 3 districts. Crisis escalation pipeline validated with local NGO partners.",
+    challenge: "Mental health support in Uganda is heavily stigmatized, expensive, and primarily modeled on Western therapy structures which don't always translate locally.",
+    solution: "We built an agentic AI companion that operates over text and voice, using locally tailored LLM prompts to provide culturally aware conversational support. It acts as a bridge, not a replacement, for human care.",
+    result: "Shown at Cavendish University Innovation Expo. Active users across 3 districts. Crisis escalation pipeline validated with local NGO partners.",
     featured: true,
   },
   {
