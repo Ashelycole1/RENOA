@@ -1,0 +1,9 @@
+# Vercel ignore file — skip files that don't need to be uploaded
+.git
+.gitignore
+.next
+node_modules
+README.md
+RENOA-Design-Spec.md
+*.log
+.env*.local

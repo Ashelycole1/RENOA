@@ -1,0 +1,251 @@
+.main {
+  padding-top: 5rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero */
+.hero {
+  padding: 4rem 0 0;
+}
+
+.heroBreadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbLink:hover {
+  color: var(--teal);
+}
+
+.breadcrumbSep {
+  opacity: 0.4;
+}
+
+.heroMeta {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.status {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+.statusLive {
+  background-color: rgba(45, 212, 191, 0.15);
+  color: var(--teal);
+  border: 1px solid var(--teal-deep);
+}
+
+.statusDev {
+  background-color: rgba(28, 58, 76, 0.5);
+  color: var(--text-muted);
+  border: 1px solid var(--line);
+}
+
+.discipline {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+
+.heroDesc {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 0 2rem;
+}
+
+.liveLink {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--teal);
+  text-decoration: none;
+  border: 1px solid var(--teal-deep);
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.liveLink:hover {
+  background-color: rgba(45, 212, 191, 0.08);
+}
+
+.heroImageArea {
+  margin-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.heroImagePlaceholder {
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 16/8;
+  background: linear-gradient(135deg, var(--bg-1), var(--surface));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImageLabel {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--line);
+  letter-spacing: -0.02em;
+}
+
+/* Content */
+.content {
+  padding: 5rem 0;
+}
+
+.section {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionTitle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  margin: 0 0 1.5rem;
+}
+
+.sectionText {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.techTag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+
+/* Founder Credits */
+.founderCredit {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.founderCreditLabel {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.founderCreditList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.founderCreditItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.founderCreditItem:hover {
+  color: var(--text);
+}
+
+.founderDot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.founderRole {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-left: 0.25rem;
+}
+
+/* Next Project */
+.nextProject {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nextLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+.nextLink {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nextLink:hover {
+  color: var(--teal);
+}
