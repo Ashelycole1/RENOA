@@ -1,22 +1,62 @@
-/* ===== RENOA Design Tokens (Afro Labs Structural Refactor) ===== */
+/* ===== RENOA Design Tokens (Afro Labs Exact Replica — Dark Green Accent) ===== */
 :root {
-  --font-display: var(--font-space-grotesk), "Space Grotesk", system-ui, -apple-system, sans-serif;
-  --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+  /* Backgrounds */
+  --bg: #fdfdfd;
+  --bg-muted: #f7f7f7;
+  --bg-glow-1: transparent;
+  --bg-glow-2: transparent;
+  --card: #ffffff;
+  --footer-from: #fdfdfd;
+  --footer-to: #f3f3f3;
 
-  --bg: #071019;
-  --fg: #F5F7FA;
-  --fg-muted: #9AA5B1;
-  --fg-dim: #627284;
-  --accent: #4F7CFF;
-  --accent-hover: #3B66E6;
-  --accent-glow: rgba(79, 124, 255, 0.25);
-  --card-bg: #0F1B29;
-  --card-hover: #142436;
-  --border: #1C2A3A;
-  --border-light: rgba(255, 255, 255, 0.08);
+  /* Text & Foreground */
+  --fg: #111827;
+  --fg-muted: #4B5563;
+  --fg-dim: #9CA3AF;
 
-  --max-width: 1200px;
+  /* Borders / glass / shadow */
+  --border: rgba(0, 0, 0, 0.07);
+  --border-strong: rgba(0, 0, 0, 0.12);
+  --glass: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-shadow: rgba(0, 0, 0, 0.04);
+  --drop-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+
+  /* Accent — RENOA Dark Green (recolored from Afro Labs purple #6f22bf) */
+  --accent: #0F6B3C;
+  --accent-hover: #0B5230;
+  --accent-soft: #E4F3EA;
+  --accent-deep: #04180F;
+  --btn-bg: #0F6B3C;
+  --btn-glow: rgba(15, 107, 60, 0.22);
+  --btn-sec-bg: #ffffff;
+  --btn-sec-text: #111827;
+  --btn-text: #ffffff;
+
+  /* Typography */
+  --font-sans: var(--font-space-grotesk), "Space Grotesk", var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --leading-tight: 1.25;
+  --leading-relaxed: 1.625;
+
+  /* Layout */
+  --container-max: 1200px;
+  --radius: 0px;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --blur-md: 12px;
+  --default-transition-duration: 0.15s;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
 }
 
 /* ===== Base Reset & System ===== */
@@ -48,7 +88,7 @@ body {
 
 /* Typography Scale */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   color: var(--fg);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -74,7 +114,7 @@ button {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1A293B;
+  background: #D1D5DB;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -84,7 +124,7 @@ button {
 /* Container & Utilities */
 .container {
   width: 100%;
-  max-width: var(--max-width);
+  max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -95,16 +135,16 @@ button {
   }
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #B0C4DE 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-accent-gradient {
-  background: linear-gradient(135deg, #7097FF 0%, #4F7CFF 50%, #00F0FF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .badge-tag {
@@ -112,66 +152,80 @@ button {
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  border-radius: var(--radius-md);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: rgba(79, 124, 255, 0.1);
-  color: #7097FF;
-  border: 1px solid rgba(79, 124, 255, 0.2);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
-.number-motif {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  font-size: 13px;
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
   font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: 14px;
+  border-radius: var(--radius-lg);
+  transition: all var(--default-transition-duration) var(--ease-out);
+  box-shadow: 0 4px 14px var(--btn-glow);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--btn-sec-bg);
+  color: var(--btn-sec-text);
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-strong);
+  transition: all var(--default-transition-duration) var(--ease-out);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-muted);
+  border-color: #00000033;
 }
 
 /* Glassmorphism */
 .glass-panel {
-  background: rgba(15, 27, 41, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--glass);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.card-light {
+  background-color: var(--card);
   border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  transition: all var(--default-transition-duration) var(--ease-out);
 }
 
-.glass-pill {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.2s ease;
+.card-light:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-lg);
 }
 
-.glass-pill:hover {
-  background: rgba(79, 124, 255, 0.12);
-  border-color: rgba(79, 124, 255, 0.3);
-}
-
-/* Animations */
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.05);
-  }
-}
-
-.animate-glow {
-  animation: pulseGlow 6s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* Faint Grid Background Motif */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }

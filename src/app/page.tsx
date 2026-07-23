@@ -15,11 +15,11 @@ export default function Home() {
   const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#071019] text-[#F5F7FA] selection:bg-[#4F7CFF] selection:text-white">
+    <div className="min-h-screen bg-[#fdfdfd] text-[#111827] selection:bg-[#0F6B3C] selection:text-white">
       {/* Top Navbar */}
       <Nav onOpenBooking={() => setBookingOpen(true)} />
 
-      {/* Hero Section */}
+      {/* Hero & Sections */}
       <main>
         <Hero onOpenBooking={() => setBookingOpen(true)} />
 
