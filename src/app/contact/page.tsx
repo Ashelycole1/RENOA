@@ -9,132 +9,102 @@ import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
 export default function ContactPage() {
   const [bookingOpen, setBookingOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    type: "Client Project",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   return (
-    <div className="min-h-screen bg-[#fdfdfd] text-[#111827] selection:bg-[#0F6B3C] selection:text-white flex flex-col justify-between">
+    <div className="min-h-screen bg-white text-[#0a0a0a]">
       <Nav onOpenBooking={() => setBookingOpen(true)} />
 
       <main className="pt-32 pb-24">
-        <div className="container max-w-4xl">
+        <div className="wrapper max-w-4xl">
           <div className="space-y-3 mb-12">
-            <span className="eyebrow">CONTACT RENOA</span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-[#111827] tracking-tight">
+            <span className="label">Contact RENOA</span>
+            <h1 className="text-5xl font-bold text-[#0a0a0a] tracking-tight">
               Let&apos;s build something that means business.
             </h1>
-            <p className="text-lg text-[#4B5563]">
-              Reach out directly to our engineering team in Kampala for system architecture inquiries, partnerships, or project consultations.
+            <p className="text-lg text-[#525252]">
+              Reach out to our engineering team in Kampala for consultations, partnerships, or project inquiries.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            {/* Direct Contact Info */}
-            <div className="lg:col-span-5 card-light p-8 space-y-6">
-              <h3 className="text-xl font-bold text-[#111827]">Direct Contact</h3>
-
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            {/* Info column */}
+            <div className="lg:col-span-2 card p-7 space-y-6 h-fit">
+              <h3 className="text-lg font-bold text-[#0a0a0a]">Direct Contact</h3>
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-[#0F6B3C] mt-0.5" />
+                  <Mail className="w-4 h-4 text-[#0F6B3C] mt-0.5 shrink-0" />
                   <div>
-                    <div className="text-xs font-mono text-[#6B7280]">EMAIL</div>
-                    <a href="mailto:hello@renoa.dev" className="text-[#111827] hover:text-[#0F6B3C] font-semibold">
+                    <p className="text-[10px] font-mono text-[#a3a3a3] uppercase mb-0.5">Email</p>
+                    <a href="mailto:hello@renoa.dev" className="font-medium text-[#0a0a0a] hover:text-[#0F6B3C] transition-colors">
                       hello@renoa.dev
                     </a>
                   </div>
                 </div>
-
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#0F6B3C] mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#0F6B3C] mt-0.5 shrink-0" />
                   <div>
-                    <div className="text-xs font-mono text-[#6B7280]">HQ LOCATION</div>
-                    <p className="text-[#111827] font-semibold">Kampala, Uganda</p>
+                    <p className="text-[10px] font-mono text-[#a3a3a3] uppercase mb-0.5">Location</p>
+                    <p className="font-medium text-[#0a0a0a]">Kampala, Uganda</p>
                   </div>
                 </div>
               </div>
-
-              <div className="pt-6 border-t border-[#0000000d]">
+              <div className="pt-4 border-t border-[#e5e5e5]">
                 <button
                   onClick={() => setBookingOpen(true)}
-                  className="btn-secondary w-full justify-center"
+                  className="btn btn-outline w-full justify-center"
                 >
-                  Schedule Cal.com Booking
+                  Schedule via Cal.com
                 </button>
               </div>
             </div>
 
-            {/* Form */}
-            <div className="lg:col-span-7 card-light p-8">
+            {/* Form column */}
+            <div className="lg:col-span-3 card p-7">
               {!submitted ? (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="text-xl font-bold text-[#111827] mb-2">Project Inquiry</h3>
-
+                <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+                  <h3 className="text-lg font-bold text-[#0a0a0a] mb-2">Project Inquiry</h3>
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#4B5563] mb-1">
-                      Name
-                    </label>
+                    <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Name</label>
                     <input
-                      type="text"
-                      required
+                      type="text" required
                       placeholder="Your name"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#fdfdfd] border border-[#0000001a] rounded-xl text-[#111827] placeholder-[#9CA3AF] focus:outline-none focus:border-[#0F6B3C]"
+                      className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors"
                     />
                   </div>
-
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#4B5563] mb-1">
-                      Email
-                    </label>
+                    <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Email</label>
                     <input
-                      type="email"
-                      required
+                      type="email" required
                       placeholder="you@company.com"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#fdfdfd] border border-[#0000001a] rounded-xl text-[#111827] placeholder-[#9CA3AF] focus:outline-none focus:border-[#0F6B3C]"
+                      className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors"
                     />
                   </div>
-
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#4B5563] mb-1">
-                      Message
-                    </label>
+                    <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Message</label>
                     <textarea
-                      rows={4}
-                      required
-                      placeholder="Tell us about what you want to build..."
+                      rows={5} required
+                      placeholder="Tell us what you want to build..."
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#fdfdfd] border border-[#0000001a] rounded-xl text-[#111827] placeholder-[#9CA3AF] focus:outline-none focus:border-[#0F6B3C] resize-none"
+                      className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors resize-none"
                     />
                   </div>
-
-                  <button
-                    type="submit"
-                    className="btn-primary w-full justify-center py-3.5"
-                  >
-                    <Send className="w-4 h-4" />
-                    <span>Send Inquiry</span>
+                  <button type="submit" className="btn btn-fill w-full justify-center">
+                    <Send className="w-4 h-4" /> Send Message
                   </button>
                 </form>
               ) : (
                 <div className="py-12 text-center space-y-4">
-                  <CheckCircle2 className="w-12 h-12 text-[#0F6B3C] mx-auto" />
-                  <h3 className="text-xl font-bold text-[#111827]">Message Sent</h3>
-                  <p className="text-sm text-[#4B5563]">
-                    Thank you! The RENOA team will respond within 24 hours.
-                  </p>
+                  <div className="w-14 h-14 bg-[#E6F2EC] rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-7 h-7 text-[#0F6B3C]" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0a0a0a]">Message sent!</h3>
+                  <p className="text-sm text-[#525252]">The RENOA team will respond within 24 hours.</p>
                 </div>
               )}
             </div>
