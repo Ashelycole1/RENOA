@@ -1,22 +1,25 @@
-/* ===== RENOA Design Tokens ===== */
+/* ===== RENOA Design Tokens (Afro Labs Structural Refactor) ===== */
 :root {
-  --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
-  --font-sans: var(--font-inter), "Inter", sans-serif;
+  --font-display: var(--font-space-grotesk), "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
 
-  --bg-0: #070f17;
-  --bg-1: #0d1b2a;
-  --surface: #122436;
-  --surface-2: #16304a;
-  --teal: #2dd4bf;
-  --teal-deep: #0d9488;
-  --line: #1c3a4c;
-  --text: #eaf2f2;
-  --text-muted: #7c93a3;
-  --text-dim: #4d6474;
+  --bg: #071019;
+  --fg: #F5F7FA;
+  --fg-muted: #9AA5B1;
+  --fg-dim: #627284;
+  --accent: #4F7CFF;
+  --accent-hover: #3B66E6;
+  --accent-glow: rgba(79, 124, 255, 0.25);
+  --card-bg: #0F1B29;
+  --card-hover: #142436;
+  --border: #1C2A3A;
+  --border-light: rgba(255, 255, 255, 0.08);
+
+  --max-width: 1200px;
 }
 
-/* ===== Base Reset & Defaults ===== */
+/* ===== Base Reset & System ===== */
 *,
 *::before,
 *::after {
@@ -27,6 +30,7 @@
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,28 +39,131 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-0);
-  color: var(--text);
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: var(--font-sans);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
+/* Typography Scale */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  line-height: 1.1;
+  color: var(--fg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 a {
   color: inherit;
-}
-
-img {
-  max-width: 100%;
-  display: block;
+  text-decoration: none;
 }
 
 button {
   font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #1A293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Container & Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #B0C4DE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-accent-gradient {
+  background: linear-gradient(135deg, #7097FF 0%, #4F7CFF 50%, #00F0FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(79, 124, 255, 0.1);
+  color: #7097FF;
+  border: 1px solid rgba(79, 124, 255, 0.2);
+}
+
+.number-motif {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(15, 27, 41, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.glass-pill:hover {
+  background: rgba(79, 124, 255, 0.12);
+  border-color: rgba(79, 124, 255, 0.3);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
