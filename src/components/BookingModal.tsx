@@ -10,10 +10,10 @@ interface BookingModalProps {
 
 export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
-    projectType: "Software Engineering & Architecture",
+    service: "Web & App Development",
     message: "",
   });
 
@@ -24,134 +24,108 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     setSubmitted(true);
   };
 
-  const resetAndClose = () => {
+  const close = () => {
     setSubmitted(false);
     onClose();
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-all duration-300">
-      <div 
-        className="relative w-full max-w-lg bg-white border border-[#0000001a] rounded-2xl p-6 sm:p-8 shadow-2xl overflow-hidden"
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm"
+      onClick={close}
+    >
+      <div
+        className="relative w-full max-w-md bg-white border border-[#e5e5e5] rounded-2xl p-8 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Glow Accent background */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#0F6B3C]/10 rounded-full blur-3xl pointer-events-none" />
-
-        {/* Close Button */}
+        {/* Close */}
         <button
-          onClick={resetAndClose}
-          className="absolute top-5 right-5 p-2 text-[#6B7280] hover:text-[#111827] bg-[#f7f7f7] hover:bg-[#e5e7eb] rounded-full transition-colors"
-          aria-label="Close modal"
+          onClick={close}
+          className="absolute top-5 right-5 p-1.5 text-[#a3a3a3] hover:text-[#0a0a0a] rounded-lg hover:bg-[#fafafa] transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {!submitted ? (
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="eyebrow">BOOK A CALL</span>
-            </div>
-            
-            <h3 className="text-2xl font-bold text-[#111827] mb-2">
-              We build software that means business.
+          <>
+            <span className="label block mb-2">Book a Call</span>
+            <h3 className="text-2xl font-bold text-[#0a0a0a] mb-1">
+              Let&apos;s build something.
             </h3>
-            <p className="text-sm text-[#4B5563] mb-6">
-              Connect directly with RENOA&apos;s co-founders & engineering team in Kampala or schedule a session via Cal.com.
+            <p className="text-sm text-[#525252] mb-6">
+              Connect with the RENOA team in Kampala — we respond within 24 hours.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#4B5563] mb-1">
-                  Your Name
-                </label>
+                <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Name</label>
                 <input
-                  type="text"
-                  required
-                  placeholder="e.g. Alex Mwangi"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-[#fdfdfd] border border-[#0000001a] rounded-xl text-[#111827] placeholder-[#9CA3AF] focus:outline-none focus:border-[#0F6B3C] transition-colors"
+                  type="text" required
+                  placeholder="Your name"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors"
                 />
               </div>
-
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#4B5563] mb-1">
-                  Work Email
-                </label>
+                <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Email</label>
                 <input
-                  type="email"
-                  required
-                  placeholder="alex@company.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-[#fdfdfd] border border-[#0000001a] rounded-xl text-[#111827] placeholder-[#9CA3AF] focus:outline-none focus:border-[#0F6B3C] transition-colors"
+                  type="email" required
+                  placeholder="you@company.com"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors"
                 />
               </div>
-
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#4B5563] mb-1">
-                  Capability Area
-                </label>
+                <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Service</label>
                 <select
-                  value={formData.projectType}
-                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                  className="w-full px-4 py-3 bg-[#fdfdfd] border border-[#0000001a] rounded-xl text-[#111827] focus:outline-none focus:border-[#0F6B3C] transition-colors"
+                  value={form.service}
+                  onChange={(e) => setForm({ ...form, service: e.target.value })}
+                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] focus:outline-none focus:border-[#0F6B3C] transition-colors"
                 >
-                  <option value="Intelligence & Automation">Intelligence & Automation (AI Systems)</option>
-                  <option value="Web & App Development">Web & App Development</option>
-                  <option value="ICT Consultation">ICT Consultation & Technical Audit</option>
-                  <option value="Brand Design & Marketing">Brand Design & Marketing</option>
+                  <option>Intelligence &amp; Automation</option>
+                  <option>Web &amp; App Development</option>
+                  <option>ICT Consultation</option>
+                  <option>Brand &amp; Design</option>
                 </select>
               </div>
-
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#4B5563] mb-1">
-                  Project Brief
-                </label>
+                <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Brief</label>
                 <textarea
                   rows={3}
-                  placeholder="Tell us about the problem you want to solve..."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 bg-[#fdfdfd] border border-[#0000001a] rounded-xl text-[#111827] placeholder-[#9CA3AF] focus:outline-none focus:border-[#0F6B3C] transition-colors resize-none"
+                  placeholder="What do you want to build?"
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors resize-none"
                 />
               </div>
 
-              <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                <button
-                  type="submit"
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#0F6B3C] hover:bg-[#0B5230] text-white font-semibold rounded-xl transition-all shadow-md shadow-[#0F6B3C]/20"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Submit Inquiry</span>
+              <div className="flex gap-3 pt-1">
+                <button type="submit" className="flex-1 btn btn-fill justify-center">
+                  <Send className="w-4 h-4" /> Send inquiry
                 </button>
-                
                 <a
                   href="https://cal.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#f7f7f7] hover:bg-[#e5e7eb] border border-[#0000001a] text-[#111827] font-semibold rounded-xl transition-colors"
+                  className="btn btn-outline"
                 >
-                  <Calendar className="w-4 h-4 text-[#0F6B3C]" />
-                  <span>Book via Cal.com</span>
+                  <Calendar className="w-4 h-4" /> Cal.com
                 </a>
               </div>
             </form>
-          </div>
+          </>
         ) : (
           <div className="py-8 text-center space-y-4">
-            <div className="w-16 h-16 bg-[#E4F3EA] text-[#0F6B3C] border border-[#0F6B3C]/30 rounded-full flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-8 h-8" />
+            <div className="w-14 h-14 bg-[#E6F2EC] rounded-full flex items-center justify-center mx-auto">
+              <CheckCircle2 className="w-7 h-7 text-[#0F6B3C]" />
             </div>
-            <h3 className="text-2xl font-bold text-[#111827]">Inquiry Received!</h3>
-            <p className="text-sm text-[#4B5563] max-w-md mx-auto">
-              Thank you, <span className="text-[#111827] font-medium">{formData.name}</span>. The RENOA team in Kampala will review your request and reach out within 24 hours.
+            <h3 className="text-xl font-bold text-[#0a0a0a]">Inquiry received!</h3>
+            <p className="text-sm text-[#525252]">
+              Thanks, <strong>{form.name}</strong>. The RENOA team will reach out within 24 hours.
             </p>
-            <button
-              onClick={resetAndClose}
-              className="mt-4 px-6 py-3 bg-[#0F6B3C] hover:bg-[#0B5230] text-white font-semibold rounded-xl transition-colors"
-            >
+            <button onClick={close} className="btn btn-fill mx-auto">
               Done
             </button>
           </div>
