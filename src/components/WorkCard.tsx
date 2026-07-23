@@ -22,74 +22,60 @@ interface WorkCardProps {
 }
 
 export default function WorkCard({ project, index }: WorkCardProps) {
-  const formattedIndex = String(index + 1).padStart(2, "0");
+  const num = String(index + 1).padStart(2, "0");
 
   return (
-    <div className="group card-light p-6 sm:p-8 flex flex-col justify-between hover:border-[#0F6B3C]/50 transition-all duration-300">
-      {/* Top Meta Bar */}
-      <div>
-        <div className="flex items-center justify-between gap-4 mb-6">
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-xs font-bold text-[#0F6B3C]">{formattedIndex}</span>
-            <span className="badge-tag">{project.category}</span>
-          </div>
-          <span className="font-mono text-xs text-[#6B7280]">{project.year}</span>
+    <div className="card p-6 flex flex-col gap-5 group hover:border-[#0F6B3C]/40 transition-all">
+      {/* Meta */}
+      <div className="flex items-center justify-between">
+        <span className="label text-[#0F6B3C]">{num}</span>
+        <div className="flex items-center gap-2">
+          {project.inDevelopment ? (
+            <span className="tag bg-amber-50 text-amber-700 border-amber-200">In dev</span>
+          ) : (
+            <span className="tag bg-[#E6F2EC] text-[#0F6B3C] border-[#0F6B3C]/20">Live</span>
+          )}
+          <span className="tag">{project.year}</span>
         </div>
-
-        {/* Visual Preview Banner */}
-        <div className="relative h-44 mb-6 rounded-xl bg-[#f7f7f7] border border-[#0000000d] p-5 flex flex-col justify-between group-hover:border-[#0F6B3C]/30 transition-colors overflow-hidden">
-          <div className="flex items-center justify-between text-xs">
-            <span className="font-mono text-[11px] font-bold text-[#0F6B3C] uppercase tracking-wider">
-              {project.badge}
-            </span>
-            {project.inDevelopment ? (
-              <span className="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-mono text-[10px] font-bold">
-                IN DEVELOPMENT
-              </span>
-            ) : (
-              <span className="px-2 py-0.5 rounded bg-[#E4F3EA] text-[#0F6B3C] font-mono text-[10px] font-bold">
-                LIVE PRODUCT
-              </span>
-            )}
-          </div>
-
-          <div className="space-y-1">
-            <h4 className="text-xl font-bold text-[#111827] group-hover:text-[#0F6B3C] transition-colors flex items-center gap-2">
-              {project.title}
-              <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#0F6B3C]" />
-            </h4>
-            {project.metrics && (
-              <p className="text-xs text-[#4B5563] font-mono">{project.metrics}</p>
-            )}
-          </div>
-        </div>
-
-        {/* Description */}
-        <p className="text-sm text-[#4B5563] leading-relaxed mb-6">
-          {project.description}
-        </p>
       </div>
 
-      {/* Bottom Visit Link */}
-      <div className="pt-4 border-t border-[#0000000d] flex items-center justify-between">
-        <span className="text-xs text-[#6B7280] font-mono">
-          {project.inDevelopment ? "RENOA Pipeline" : project.liveUrl.replace("https://", "")}
-        </span>
+      {/* Preview block */}
+      <div className="h-36 bg-[#fafafa] border border-[#e5e5e5] rounded-lg flex items-end p-4 group-hover:border-[#0F6B3C]/30 transition-colors overflow-hidden relative">
+        <div className="absolute top-3 right-3">
+          <span className="label text-[9px]">{project.badge}</span>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-[#0a0a0a] flex items-center gap-1.5 group-hover:text-[#0F6B3C] transition-colors">
+            {project.title}
+            <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </h3>
+          {project.metrics && (
+            <p className="text-xs text-[#a3a3a3] font-mono mt-0.5">{project.metrics}</p>
+          )}
+        </div>
+      </div>
 
+      {/* Description */}
+      <p className="text-sm text-[#525252] leading-relaxed flex-1">
+        {project.description}
+      </p>
+
+      {/* Footer */}
+      <div className="pt-4 border-t border-[#e5e5e5] flex items-center justify-between">
+        <span className="text-xs font-mono text-[#a3a3a3]">
+          {project.liveUrl.replace("https://", "")}
+        </span>
         {!project.inDevelopment ? (
           <a
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F6B3C] hover:text-[#0B5230] transition-colors"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-[#0F6B3C] hover:text-[#0B5230] transition-colors"
           >
-            <span>Visit</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            Visit <ExternalLink className="w-3 h-3" />
           </a>
         ) : (
-          <span className="text-xs font-mono font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">
-            COMING SOON
-          </span>
+          <span className="text-xs font-mono text-amber-600">Coming soon</span>
         )}
       </div>
     </div>
