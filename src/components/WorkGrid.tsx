@@ -1,9 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import WorkCard, { ProjectData } from "./WorkCard";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+
+export interface ProjectData {
+  id: string;
+  title: string;
+  category: string;
+  year: string;
+  description: string;
+  liveUrl: string;
+  badge: string;
+}
 
 export const FEATURED_PROJECTS: ProjectData[] = [
   {
@@ -14,9 +22,6 @@ export const FEATURED_PROJECTS: ProjectData[] = [
     description: "Peer-to-peer car rental platform for Uganda with Mobile Money booking and owner dashboards.",
     liveUrl: "https://driveug.vercel.app",
     badge: "MOBILITY PLATFORM",
-    accentColor: "#0F6B3C",
-    metrics: "Uganda P2P Fleet Engine",
-    techStack: ["Next.js", "Mobile Money", "Tailwind CSS"],
   },
   {
     id: "lawbuddy",
@@ -26,80 +31,164 @@ export const FEATURED_PROJECTS: ProjectData[] = [
     description: "An AI legal assistant grounded strictly in the 1995 Ugandan Constitution, with chat and side-by-side article comparison.",
     liveUrl: "https://uglawbuddy.vercel.app",
     badge: "CONSTITUTIONAL AI",
-    accentColor: "#0F6B3C",
-    metrics: "1995 Constitution Grounding",
-    techStack: ["Agentic AI", "Vector Search", "Next.js"],
   },
   {
     id: "gemyte",
     title: "Gemyte",
     category: "AI Learning Platform",
     year: "2026",
-    description: "An AI-driven 3D learning engine — upload a syllabus, generate 'Knowledge Orbs,' and work through STEM material as gamified cognitive challenges, powered by Gemini 2.5.",
+    description: "An AI-driven 3D learning engine — upload a syllabus, generate Knowledge Orbs, and work through STEM material as gamified cognitive challenges.",
     liveUrl: "https://gemyte.vercel.app",
     badge: "3D LEARNING ENGINE",
-    accentColor: "#0F6B3C",
-    metrics: "Gemini 2.5 STEM Engine",
-    techStack: ["Gemini 2.5", "WebGL", "Gamification"],
   },
 ];
 
-export default function WorkGrid() {
-  const [activeIndex, setActiveIndex] = useState(0);
+function ProjectCard({ project, delay }: { project: ProjectData; delay: number }) {
+  const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
 
-  const prev = () => setActiveIndex((i) => (i === 0 ? FEATURED_PROJECTS.length - 1 : i - 1));
-  const next = () => setActiveIndex((i) => (i === FEATURED_PROJECTS.length - 1 ? 0 : i + 1));
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   return (
-    <section id="work" className="py-24 border-t border-[#e5e5e5]">
-      <div className="wrapper">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-          <div className="space-y-3 max-w-xl">
-            <div className="flex items-center gap-3">
-              <span className="label">SELECTED WORK</span>
-              <span className="text-[#e5e5e5]">|</span>
-              <div className="flex items-center gap-1.5 font-mono text-xs font-bold text-[#0F6B3C]">
-                <span>01 / 03</span>
-                <div className="flex items-center gap-1 ml-1">
-                  <button
-                    onClick={prev}
-                    className="w-6 h-6 rounded-full border border-[#e5e5e5] bg-white flex items-center justify-center text-[#525252] hover:border-[#0F6B3C] hover:text-[#0F6B3C] transition-colors"
-                    aria-label="Previous Project"
-                  >
-                    <ChevronLeft className="w-3.5 h-3.5" />
-                  </button>
-                  <button
-                    onClick={next}
-                    className="w-6 h-6 rounded-full bg-[#0F6B3C] text-white flex items-center justify-center hover:bg-[#0B5230] transition-colors"
-                    aria-label="Next Project"
-                  >
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <h2 className="text-4xl font-bold text-[#0a0a0a] tracking-tight">
-              What we&apos;ve shipped recently.
-            </h2>
-            <p className="text-[#525252] text-base leading-relaxed">
-              A clean look at the product systems we have designed, engineered, and launched recently to unlock business growth.
-            </p>
+    <article
+      ref={ref}
+      className="group overflow-hidden rounded bg-white border border-[#0000000d] transition-colors hover:border-[var(--accent)]"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(24px)",
+        transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`,
+      }}
+    >
+      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full flex flex-col">
+        {/* Preview image area */}
+        <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-[#0000000d] bg-[#f7f7f7] p-4 md:p-8">
+          <div className="relative w-full h-full flex items-center justify-center text-[#e5e5e5]">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2.67 18.95L7.6 15.64C8.39 15.11 9.53 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
-
-          <Link
-            href="/projects"
-            className="btn btn-outline self-start md:self-auto shrink-0"
-          >
-            View all projects <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Card content */}
+        <div className="p-6 flex flex-col flex-grow">
+          <div className="mb-4 flex items-center justify-between">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+              {project.category}
+            </span>
+            <span className="text-[12px] font-mono text-[#a3a3a3] group-hover:text-[#111] transition-colors">
+              {project.year}
+            </span>
+          </div>
+
+          <h3
+            className="text-[24px] leading-[1.1] tracking-[-0.03em] text-[#111] mb-3"
+            style={{ fontFamily: "var(--font-sans)", fontWeight: 400 }}
+          >
+            {project.title}
+          </h3>
+
+          <p className="min-h-[68px] text-[14px] leading-[1.65] text-[#525252] flex-grow">
+            {project.description}
+          </p>
+
+          {/* Footer row */}
+          <div className="mt-auto flex items-center justify-between pt-5 border-t border-[#0000000d]">
+            <div className="flex items-center gap-2 text-[13px] font-medium text-[#111] transition-colors group-hover:text-[var(--accent)]">
+              Visit
+              <svg className="ml-2 transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="1.5" d="M14.43 5.93L20.5 12l-6.07 6.07M3.5 12h16.83" />
+              </svg>
+            </div>
+            <div className="flex items-center justify-center h-8 w-8 border border-[#0000001a] bg-white transition-all group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] group-hover:text-white text-[#111]">
+              <svg
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rotate-[-45deg]"
+                xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              >
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="1.5" d="M14.43 5.93L20.5 12l-6.07 6.07M3.5 12h16.83" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+    </article>
+  );
+}
+
+export default function WorkGrid() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [headerVisible, setHeaderVisible] = useState(false);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setHeaderVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <section id="work" className="bg-[var(--bg)] px-4 py-20 md:py-32">
+      <div className="mx-auto max-w-[1080px]">
+
+        {/* Header — centered, matching Afro Labs exactly */}
+        <div
+          ref={headerRef}
+          className="mb-12 flex flex-col items-center text-center"
+          style={{
+            opacity: headerVisible ? 1 : 0,
+            transform: headerVisible ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.5s ease, transform 0.5s ease",
+          }}
+        >
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+              Selected Work
+            </span>
+            <div className="h-[1px] w-8 bg-[var(--accent)]" />
+          </div>
+
+          <h2
+            className="text-[36px] leading-[1.05] tracking-[-0.04em] text-[#111] md:text-[56px]"
+            style={{ fontFamily: "var(--font-sans)", fontWeight: 400 }}
+          >
+            What we&apos;ve shipped recently.
+          </h2>
+
+          <p className="mt-5 max-w-[600px] text-[15px] leading-[1.7] text-[#525252]">
+            A clean look at the product systems we have designed, engineered, and launched recently to unlock business growth.
+          </p>
+
+          <div className="mt-8">
+            <Link
+              href="/projects"
+              className="inline-flex min-h-[44px] w-fit items-center gap-2 border border-[#0000001a] bg-transparent px-6 text-[14px] font-medium text-[#111] transition-colors hover:bg-[var(--accent-soft)] hover:text-[var(--accent)]"
+              style={{ borderRadius: "var(--radius-md)" }}
+            >
+              View all projects
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="1.5" d="M14.43 5.93L20.5 12l-6.07 6.07M3.5 12h16.83" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {FEATURED_PROJECTS.map((project, i) => (
-            <WorkCard key={project.id} project={project} index={i} />
+            <ProjectCard key={project.id} project={project} delay={i * 80} />
           ))}
         </div>
       </div>

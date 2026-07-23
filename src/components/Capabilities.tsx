@@ -1,113 +1,180 @@
 "use client";
 
-import { Bot, Globe, ShieldAlert, Palette, Cpu } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
-const SERVICES = [
+const CAPABILITIES = [
   {
-    icon: Bot,
-    title: "Intelligence & Automation",
-    description: "AI systems, LLM-driven workflows, and automation that thinks ahead of the busywork, so your team doesn't have to.",
-    tags: ["Agentic Workflows", "Vector RAG", "Custom LLMs", "Automation"],
+    title: "Product Design",
+    desc: "User journeys, interface systems, prototypes, and product decisions shaped around what the business needs to prove.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 8V16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M8 12H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
-    icon: Globe,
-    title: "Web & App Development",
-    description: "Production-grade web platforms and mobile apps, built to hold up under real users, not just demos.",
-    tags: ["Next.js & React", "TypeScript", "Mobile Money", "Mobile Apps"],
+    title: "Brand Identity",
+    desc: "Logos, visual language, typography, colors, and brand rules that make the product feel credible from day one.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 12H17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
-    icon: ShieldAlert,
-    title: "ICT Consultation",
-    description: "Technical strategy, infrastructure audits, and roadmap decisions for teams who need a second set of eyes before they build.",
-    tags: ["System Architecture", "Security Audits", "Cloud Infrastructure"],
+    title: "Platform Development",
+    desc: "Production web apps, SaaS platforms, commerce systems, APIs, databases, and internal tools built for real use.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 12H2M12 2V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M19.0711 4.92896L4.92896 19.0711M19.0711 19.0711L4.92896 4.92896" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
-    icon: Palette,
-    title: "Brand Design & Marketing",
-    description: "Identity systems, visual language, and go-to-market storytelling that make a product feel credible from launch day.",
-    tags: ["Brand Systems", "UI/UX Design", "Go-To-Market", "Motion"],
+    title: "AI and Automation",
+    desc: "LLM features, workflow automation, routing logic, cloud tasks, and operational systems that remove manual work.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M2 12H22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M4.92896 4.92896L19.0711 19.0711" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M4.92896 19.0711L19.0711 4.92896" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
 ];
 
-export default function Capabilities() {
+function CapabilityCard({ item, delay }: { item: typeof CAPABILITIES[0], delay: number }) {
+  const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section id="capabilities" className="py-24 border-t border-[#e5e5e5]">
-      <div className="wrapper">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Title, Subline, Stippled 3D Illustration */}
-          <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28">
-            <div className="space-y-3">
-              <span className="label">CAPABILITIES</span>
-              <h2 className="text-4xl font-bold text-[#0a0a0a] tracking-tight">
-                Built for every product need.
-              </h2>
-              <p className="text-[#525252] text-base leading-relaxed">
-                Composable by design, our team adapts to the unique challenges of your project. Simplify operational complexity with fast, flexible solutions built for ROI at scale.
-              </p>
+    <article
+      ref={ref}
+      className="group relative overflow-hidden rounded bg-[var(--surface)] p-8 md:p-12 border border-[var(--border)] transition-colors hover:border-[var(--accent)]"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(20px)",
+        transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`,
+      }}
+    >
+      {/* Background illustration on hover - Afro Labs exact styling */}
+      <div className="absolute -bottom-8 -right-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-700 pointer-events-none group-hover:scale-105 transform origin-bottom-right ease-out">
+        <svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="120" cy="120" r="118" stroke="currentColor" strokeWidth="4" />
+          <circle cx="120" cy="120" r="80" stroke="currentColor" strokeWidth="4" />
+          <circle cx="120" cy="120" r="42" stroke="currentColor" strokeWidth="4" />
+        </svg>
+      </div>
+
+      <div className="relative z-10 flex flex-col md:flex-row md:items-start md:gap-6">
+        <div className="mb-6 md:mb-0 flex-shrink-0">
+          <div
+            className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--accent)] text-[var(--bg)] shadow-[0_4px_14px_var(--btn-glow)] group-hover:scale-110 transition-transform duration-500 ease-out"
+            style={{ boxShadow: "0 4px 14px var(--accent-deep)" }}
+          >
+            {item.icon}
+          </div>
+        </div>
+
+        <div className="flex flex-col h-full flex-grow">
+          <h3
+            className="text-[28px] md:text-[32px] tracking-[-0.02em] text-[var(--text-primary)] mb-4"
+            style={{ fontWeight: 400 }}
+          >
+            {item.title}
+          </h3>
+          <p className="text-[15px] leading-[1.6] text-[var(--text-secondary)] max-w-[400px]">
+            {item.desc}
+          </p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+export default function Capabilities() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [headerVisible, setHeaderVisible] = useState(false);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setHeaderVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <section id="services-capabilities" className="bg-[var(--bg)] px-4 py-20 md:py-32">
+      <div className="mx-auto max-w-[1080px]">
+        {/* Exact Afro Labs split grid structure: left sticky header, right cards */}
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.4fr_0.6fr]">
+          
+          {/* Left Sticky Header */}
+          <div
+            ref={headerRef}
+            className="flex flex-col items-start lg:sticky lg:top-32 lg:self-start"
+            style={{
+              opacity: headerVisible ? 1 : 0,
+              transform: headerVisible ? "translateY(0)" : "translateY(20px)",
+              transition: "opacity 0.5s ease, transform 0.5s ease",
+            }}
+          >
+            <div className="mb-6 flex items-center gap-3">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+                Capabilities
+              </span>
+              <div className="h-[1px] w-8 bg-[var(--accent)]" />
             </div>
 
-            {/* Stippled 3D Dot-Matrix Illustration (Green Stippled Theme) */}
-            <div className="p-6 bg-[#fafafa] border border-[#e5e5e5] rounded-xl space-y-4 shadow-xs">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#0F6B3C]">
-                <Cpu className="w-4 h-4 text-[#0F6B3C]" />
-                <span>STIPPLED MATRIX SYSTEM</span>
-              </div>
+            <h2
+              className="text-[36px] leading-[1.05] tracking-[-0.04em] text-[var(--text-primary)] md:text-[56px]"
+              style={{ fontFamily: "var(--font-sans)", fontWeight: 400 }}
+            >
+              Built for every <br className="hidden lg:block" /> product need.
+            </h2>
 
-              {/* Dot Grid Stippled Visual */}
-              <div className="grid grid-cols-8 gap-2 py-2">
-                {Array.from({ length: 32 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className={`h-2 rounded-full transition-all ${
-                      i % 3 === 0
-                        ? "bg-[#0F6B3C]"
-                        : i % 2 === 0
-                        ? "bg-[#0F6B3C]/40"
-                        : "bg-[#e5e5e5]"
-                    }`}
-                  />
-                ))}
-              </div>
+            <p className="mt-6 max-w-[400px] text-[15px] leading-[1.75] text-[var(--text-secondary)]">
+              Composable by design, our team adapts to the unique challenges of your project. Simplify operational complexity with fast, flexible solutions built for ROI at scale.
+            </p>
 
-              <div className="flex items-center justify-between text-xs text-[#a3a3a3] font-mono">
-                <span>4 CORE PILLARS</span>
-                <span className="text-[#0F6B3C] font-semibold">FLEXIBLE & SCALABLE →</span>
-              </div>
+            {/* Graphic / Image area */}
+            <div className="mt-10 w-full max-w-[420px] rounded-md border border-[var(--border)] bg-[#f7f7f7] aspect-square flex flex-col items-center justify-center p-8 text-[var(--text-muted)]">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="9" y1="21" x2="9" y2="9"/>
+              </svg>
+              <span className="mt-4 text-xs font-mono">Platform Ecosystem</span>
             </div>
           </div>
 
-          {/* Right Column: 4 Pillar Cards */}
-          <div className="lg:col-span-7 space-y-4">
-            {SERVICES.map((s, idx) => {
-              const Icon = s.icon;
-              return (
-                <div
-                  key={s.title}
-                  className="card p-7 space-y-4 hover:border-[#0F6B3C]/40 transition-colors"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-lg bg-[#0F6B3C] text-white flex items-center justify-center shadow-xs">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <span className="font-mono text-xs font-bold text-[#0F6B3C]">
-                      PILLAR 0{idx + 1}
-                    </span>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <h3 className="text-xl font-bold text-[#0a0a0a]">{s.title}</h3>
-                    <p className="text-sm text-[#525252] leading-relaxed">{s.description}</p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#e5e5e5]">
-                    {s.tags.map((t) => (
-                      <span key={t} className="tag">{t}</span>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+          {/* Right Cards Stack */}
+          <div className="flex flex-col gap-6">
+            {CAPABILITIES.map((item, i) => (
+              <CapabilityCard key={item.title} item={item} delay={i * 100} />
+            ))}
           </div>
+
         </div>
       </div>
     </section>
