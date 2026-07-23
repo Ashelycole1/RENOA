@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import WorkCard, { ProjectData } from "./WorkCard";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
@@ -15,7 +16,7 @@ export const FEATURED_PROJECTS: ProjectData[] = [
     badge: "MOBILITY PLATFORM",
     accentColor: "#0F6B3C",
     metrics: "Uganda P2P Fleet Engine",
-    techStack: ["Next.js 14", "Mobile Money", "Tailwind CSS"],
+    techStack: ["Next.js", "Mobile Money", "Tailwind CSS"],
   },
   {
     id: "lawbuddy",
@@ -26,7 +27,7 @@ export const FEATURED_PROJECTS: ProjectData[] = [
     liveUrl: "https://uglawbuddy.vercel.app",
     badge: "CONSTITUTIONAL AI",
     accentColor: "#0F6B3C",
-    metrics: "1995 Constitution Vector Grounding",
+    metrics: "1995 Constitution Grounding",
     techStack: ["Agentic AI", "Vector Search", "Next.js"],
   },
   {
@@ -44,49 +45,61 @@ export const FEATURED_PROJECTS: ProjectData[] = [
 ];
 
 export default function WorkGrid() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const prev = () => setActiveIndex((i) => (i === 0 ? FEATURED_PROJECTS.length - 1 : i - 1));
+  const next = () => setActiveIndex((i) => (i === FEATURED_PROJECTS.length - 1 ? 0 : i + 1));
+
   return (
-    <section id="work" className="py-24 border-b border-[#0000000d]">
-      <div className="container">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div className="space-y-3 max-w-2xl">
+    <section id="work" className="py-24 border-t border-[#e5e5e5]">
+      <div className="wrapper">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div className="space-y-3 max-w-xl">
             <div className="flex items-center gap-3">
-              <span className="eyebrow">SELECTED WORK</span>
-              <span className="text-gray-300">|</span>
-              <div className="flex items-center gap-1.5">
-                <span className="font-mono text-xs font-bold text-[#0F6B3C]">01 / 03</span>
-                <div className="flex items-center gap-1 ml-2">
-                  <button className="w-7 h-7 rounded-full border border-[#0000001a] bg-white flex items-center justify-center text-[#6B7280] hover:text-[#111827]">
-                    <ChevronLeft className="w-4 h-4" />
+              <span className="label">SELECTED WORK</span>
+              <span className="text-[#e5e5e5]">|</span>
+              <div className="flex items-center gap-1.5 font-mono text-xs font-bold text-[#0F6B3C]">
+                <span>01 / 03</span>
+                <div className="flex items-center gap-1 ml-1">
+                  <button
+                    onClick={prev}
+                    className="w-6 h-6 rounded-full border border-[#e5e5e5] bg-white flex items-center justify-center text-[#525252] hover:border-[#0F6B3C] hover:text-[#0F6B3C] transition-colors"
+                    aria-label="Previous Project"
+                  >
+                    <ChevronLeft className="w-3.5 h-3.5" />
                   </button>
-                  <button className="w-7 h-7 rounded-full bg-[#0F6B3C] text-white flex items-center justify-center">
-                    <ChevronRight className="w-4 h-4" />
+                  <button
+                    onClick={next}
+                    className="w-6 h-6 rounded-full bg-[#0F6B3C] text-white flex items-center justify-center hover:bg-[#0B5230] transition-colors"
+                    aria-label="Next Project"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] tracking-tight">
+            <h2 className="text-4xl font-bold text-[#0a0a0a] tracking-tight">
               What we&apos;ve shipped recently.
             </h2>
-            <p className="text-[#4B5563] text-base">
+            <p className="text-[#525252] text-base leading-relaxed">
               A clean look at the product systems we have designed, engineered, and launched recently to unlock business growth.
             </p>
           </div>
 
           <Link
             href="/projects"
-            className="btn-secondary group whitespace-nowrap"
+            className="btn btn-outline self-start md:self-auto shrink-0"
           >
-            <span>View all projects</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            View all projects <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* 3-Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {FEATURED_PROJECTS.map((project, index) => (
-            <WorkCard key={project.id} project={project} index={index} />
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {FEATURED_PROJECTS.map((project, i) => (
+            <WorkCard key={project.id} project={project} index={i} />
           ))}
         </div>
       </div>
