@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import WorkCard, { ProjectData } from "@/components/WorkCard";
-import { Filter, ArrowRight } from "lucide-react";
+import { Filter } from "lucide-react";
 
 const ALL_PROJECTS: ProjectData[] = [
   {
@@ -13,12 +13,11 @@ const ALL_PROJECTS: ProjectData[] = [
     title: "DriveUG",
     category: "Platform",
     year: "2026",
-    description: "Peer-to-peer car rental platform for Uganda with Mobile Money booking and owner dashboards.",
+    description: "Peer-to-peer car rental platform for Uganda with Mobile Money booking and verified owner dashboards.",
     liveUrl: "https://driveug.vercel.app",
     badge: "MOBILITY PLATFORM",
     accentColor: "#0F6B3C",
-    metrics: "MTN / Airtel Mobile Money Integration",
-    techStack: ["Next.js 14", "Mobile Money", "Tailwind CSS"],
+    metrics: "MTN / Airtel Mobile Money",
     inDevelopment: false,
   },
   {
@@ -26,12 +25,11 @@ const ALL_PROJECTS: ProjectData[] = [
     title: "LAWBUDDY",
     category: "AI",
     year: "2026",
-    description: "An AI legal assistant grounded strictly in the 1995 Ugandan Constitution, with chat and side-by-side article comparison.",
+    description: "AI legal assistant grounded strictly in the 1995 Ugandan Constitution with chat and article comparison.",
     liveUrl: "https://uglawbuddy.vercel.app",
     badge: "CONSTITUTIONAL AI",
     accentColor: "#0F6B3C",
-    metrics: "1995 Constitution RAG Grounding",
-    techStack: ["Agentic AI", "Vector Search", "Uganda Law"],
+    metrics: "1995 Constitution RAG",
     inDevelopment: false,
   },
   {
@@ -39,111 +37,102 @@ const ALL_PROJECTS: ProjectData[] = [
     title: "Gemyte",
     category: "AI",
     year: "2026",
-    description: "An AI-driven 3D learning engine — upload a syllabus, generate 'Knowledge Orbs,' and work through STEM material as gamified cognitive challenges, powered by Gemini 2.5.",
+    description: "3D AI learning engine — upload a syllabus, generate Knowledge Orbs, and master STEM via gamified challenges.",
     liveUrl: "https://gemyte.vercel.app",
     badge: "3D LEARNING ENGINE",
     accentColor: "#0F6B3C",
     metrics: "Gemini 2.5 STEM Engine",
-    techStack: ["Gemini 2.5", "WebGL", "Gamification"],
     inDevelopment: false,
   },
   {
     id: "konnect-web3",
-    title: "Konnect Web3 Infrastructure",
+    title: "Konnect Web3",
     category: "Web3",
     year: "2026",
-    description: "On-chain loyalty and automated smart contract settlement engine built for East African merchants.",
+    description: "On-chain loyalty and automated smart contract settlement engine for East African merchants.",
     liveUrl: "https://driveug.vercel.app",
     badge: "ON-CHAIN SETTLEMENT",
     accentColor: "#0F6B3C",
-    metrics: "Smart Contract Settlement Layer",
-    techStack: ["Solidity", "Web3", "Next.js"],
+    metrics: "Smart Contract Layer",
     inDevelopment: true,
   },
   {
     id: "renoa-brand",
-    title: "RENOA Brand & Motion System",
+    title: "RENOA Brand System",
     category: "Brand",
     year: "2026",
-    description: "Identity system, visual language, and custom 3D illustration assets designed for RENOA studio.",
+    description: "Identity system, visual language, and 3D illustration assets designed for RENOA studio.",
     liveUrl: "https://driveug.vercel.app",
     badge: "IDENTITY SYSTEM",
     accentColor: "#0F6B3C",
-    metrics: "3D Isometric & Stippled Visuals",
-    techStack: ["Design System", "Motion Design"],
+    metrics: "3D Isometric Visuals",
     inDevelopment: false,
   },
 ];
 
-const FILTER_CATEGORIES = ["All", "AI", "Web3", "Platform", "Brand", "Consulting"];
+const FILTERS = ["All", "AI", "Web3", "Platform", "Brand", "Consulting"];
 
 export default function ProjectsPage() {
   const [bookingOpen, setBookingOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [filter, setFilter] = useState("All");
 
-  const filteredProjects = selectedCategory === "All"
+  const filtered = filter === "All"
     ? ALL_PROJECTS
-    : ALL_PROJECTS.filter((p) => p.category === selectedCategory);
+    : ALL_PROJECTS.filter((p) => p.category === filter);
 
   return (
-    <div className="min-h-screen bg-[#fdfdfd] text-[#111827] selection:bg-[#0F6B3C] selection:text-white">
+    <div className="min-h-screen bg-white text-[#0a0a0a]">
       <Nav onOpenBooking={() => setBookingOpen(true)} />
 
       <main className="pt-32 pb-24">
-        <div className="container">
+        <div className="wrapper">
           {/* Header */}
-          <div className="max-w-3xl mb-12 space-y-4">
-            <span className="eyebrow">ALL PROJECTS</span>
-
-            <h1 className="text-4xl sm:text-5xl font-bold text-[#111827] tracking-tight">
-              Our Work
-            </h1>
-
-            <p className="text-lg text-[#4B5563] leading-relaxed">
+          <div className="max-w-2xl mb-12 space-y-3">
+            <span className="label">ALL PROJECTS</span>
+            <h1 className="text-5xl font-bold text-[#0a0a0a] tracking-tight">Our Work</h1>
+            <p className="text-lg text-[#525252] leading-relaxed">
               Every project is a partnership — from concept to launch, engineered with precision and care for global scale.
             </p>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 mb-12 pb-6 border-b border-[#0000000d]">
-            <div className="flex items-center gap-1.5 mr-2 text-xs font-mono text-[#6B7280]">
-              <Filter className="w-3.5 h-3.5" />
-              <span>FILTER:</span>
+          {/* Filters */}
+          <div className="flex flex-wrap items-center gap-2 mb-10 pb-8 border-b border-[#e5e5e5]">
+            <div className="flex items-center gap-1.5 text-xs font-mono text-[#a3a3a3] mr-1">
+              <Filter className="w-3.5 h-3.5" /> FILTER:
             </div>
-            {FILTER_CATEGORIES.map((cat) => (
+            {FILTERS.map((f) => (
               <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
-                  selectedCategory === cat
-                    ? "bg-[#0F6B3C] text-white shadow-sm shadow-[#0F6B3C]/20"
-                    : "bg-white text-[#4B5563] hover:text-[#111827] border border-[#0000000d]"
+                key={f}
+                onClick={() => setFilter(f)}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all border ${
+                  filter === f
+                    ? "bg-[#0F6B3C] text-white border-[#0F6B3C]"
+                    : "bg-white text-[#525252] border-[#e5e5e5] hover:border-[#aaa]"
                 }`}
               >
-                {cat}
+                {f}
               </button>
             ))}
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-            {filteredProjects.map((project, idx) => (
-              <WorkCard key={project.id} project={project} index={idx} />
+          {/* Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+            {filtered.map((p, i) => (
+              <WorkCard key={p.id} project={p} index={i} />
             ))}
           </div>
 
-          {/* Bottom CTA Band */}
-          <div className="p-10 rounded-2xl bg-gradient-to-r from-[#E4F3EA] to-[#f7f7f7] border border-[#0000000d] flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* CTA */}
+          <div className="p-10 rounded-xl bg-[#fafafa] border border-[#e5e5e5] flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-1">
-              <h2 className="text-2xl font-bold text-[#111827]">Ready to build?</h2>
-              <p className="text-sm text-[#4B5563]">Let&apos;s discuss how we can bring your next product to life.</p>
+              <h2 className="text-2xl font-bold text-[#0a0a0a]">Ready to build?</h2>
+              <p className="text-sm text-[#525252]">Let&apos;s discuss how we can bring your next product to life.</p>
             </div>
             <button
               onClick={() => setBookingOpen(true)}
-              className="btn-primary text-sm px-6 py-3.5 whitespace-nowrap"
+              className="btn btn-fill shrink-0"
             >
-              <span>Start a Project</span>
-              <ArrowRight className="w-4 h-4" />
+              Start a Project
             </button>
           </div>
         </div>
