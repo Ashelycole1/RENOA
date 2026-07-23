@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, ArrowRight, Layers, Code, Rocket } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -8,128 +8,113 @@ interface HeroProps {
 
 export default function Hero({ onOpenBooking }: HeroProps) {
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden border-b border-[#0000000d]">
-      {/* Background Soft Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#0F6B3C]/5 rounded-full blur-[140px] pointer-events-none" />
+    <section className="pt-28 pb-24 dot-bg">
+      <div className="wrapper">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center min-h-[540px]">
+          {/* Left: Text */}
+          <div className="space-y-6">
+            {/* Featured Chip */}
+            <a
+              href="https://driveug.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-1 bg-[#E6F2EC] border border-[#0F6B3C]/20 rounded-full text-xs font-mono font-semibold text-[#0F6B3C] hover:bg-[#0F6B3C] hover:text-white transition-all group"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0F6B3C] group-hover:bg-white animate-pulse" />
+              <span>FEATURED: DriveUG — Peer-to-Peer Rental Platform</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
 
-      <div className="container relative z-10">
-        {/* Featured-Demo Chip */}
-        <div className="inline-flex items-center gap-2 mb-8">
-          <a
-            href="https://driveug.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs bg-white border border-[#0000001a] shadow-sm hover:border-[#0F6B3C]/40 transition-all"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0F6B3C] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0F6B3C]"></span>
-            </span>
-            <span className="font-semibold text-[#4B5563] group-hover:text-[#111827] transition-colors">
-              FEATURED: <strong className="text-[#111827] font-bold">DriveUG</strong> — Peer-to-Peer Rental Platform
-            </span>
-            <ExternalLink className="w-3.5 h-3.5 text-[#0F6B3C] group-hover:translate-x-0.5 transition-transform" />
-          </a>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-6">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111827] tracking-tight leading-[1.15]">
-              We build software that{" "}
-              <span className="text-[#0F6B3C]">means business.</span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0a0a0a] tracking-tight leading-[1.05]">
+              We build software that means business.
             </h1>
 
-            <p className="text-lg sm:text-xl text-[#4B5563] max-w-2xl font-normal leading-relaxed">
+            <p className="text-lg text-[#525252] max-w-lg leading-relaxed">
               Our adaptive team powers engineering, design, and AI operations for teams across Kampala and global markets.
             </p>
 
-            {/* Dual CTAs */}
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <button
-                onClick={onOpenBooking}
-                className="btn-primary text-base px-7 py-4"
-              >
-                <span>Book a call</span>
-                <ArrowRight className="w-4 h-4" />
+            <div className="flex items-center gap-4 flex-wrap pt-2">
+              <button onClick={onOpenBooking} className="btn btn-fill">
+                Book a call <ArrowRight className="w-4 h-4" />
               </button>
-
-              <a
-                href="#capabilities"
-                className="btn-secondary text-base px-6 py-4"
-              >
-                <span>Learn more</span>
+              <a href="#capabilities" className="btn btn-outline">
+                Learn more <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Right Column: 3D Isometric Illustration System (Design / Build / Launch) */}
-          <div className="lg:col-span-5 relative flex items-center justify-center">
-            <div className="relative w-full max-w-md bg-white border border-[#0000001a] rounded-2xl p-8 shadow-xl overflow-hidden">
-              {/* Top Banner Header */}
-              <div className="flex items-center justify-between border-b border-[#0000000d] pb-4 mb-6">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#0F6B3C]" />
-                  <span className="font-mono text-xs font-bold text-[#111827] uppercase tracking-wider">
-                    SYSTEM ARCHITECTURE
-                  </span>
-                </div>
-                <span className="font-mono text-xs font-semibold text-[#0F6B3C] bg-[#E4F3EA] px-2.5 py-0.5 rounded">
-                  DEPLOYED
-                </span>
-              </div>
+          {/* Right: Isometric Stack Illustration */}
+          <div className="flex items-center justify-center">
+            <svg
+              viewBox="0 0 520 480"
+              className="w-full max-w-[480px]"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Orbit ring */}
+              <ellipse
+                cx="260"
+                cy="200"
+                rx="200"
+                ry="85"
+                stroke="#0F6B3C"
+                strokeOpacity="0.25"
+                strokeWidth="1.5"
+                strokeDasharray="5 5"
+              />
+              {/* Vertical stem */}
+              <line x1="260" y1="60" x2="260" y2="148" stroke="#0F6B3C" strokeOpacity="0.35" strokeWidth="1.5" />
 
-              {/* 3D Isometric Stack Visual */}
-              <div className="space-y-4">
-                {/* Block 1: Design */}
-                <div className="group p-4 bg-[#f7f7f7] border border-[#0000000d] rounded-xl flex items-center justify-between transition-all hover:bg-[#E4F3EA] hover:border-[#0F6B3C]/30">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#0F6B3C] text-white flex items-center justify-center font-bold">
-                      <Layers className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-[#111827]">Design & Blueprint</h4>
-                      <p className="text-xs text-[#4B5563] italic">System Architecture & PRD</p>
-                    </div>
-                  </div>
-                  <span className="font-mono text-xs font-bold text-[#0F6B3C]">01</span>
-                </div>
+              {/* Globe */}
+              <g transform="translate(260,140)">
+                <circle cx="0" cy="0" r="46" fill="#0F6B3C" />
+                <ellipse cx="0" cy="0" rx="46" ry="20" stroke="#fff" strokeWidth="1" fill="none" strokeOpacity="0.5" />
+                <ellipse cx="0" cy="0" rx="22" ry="46" stroke="#fff" strokeWidth="1" fill="none" strokeOpacity="0.5" />
+                <line x1="-46" y1="0" x2="46" y2="0" stroke="#fff" strokeWidth="1" strokeOpacity="0.5" />
+              </g>
 
-                {/* Block 2: Build */}
-                <div className="group p-4 bg-[#f7f7f7] border border-[#0000000d] rounded-xl flex items-center justify-between transition-all hover:bg-[#E4F3EA] hover:border-[#0F6B3C]/30">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#0F6B3C] text-white flex items-center justify-center font-bold">
-                      <Code className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-[#111827]">Build & Engineering</h4>
-                      <p className="text-xs text-[#4B5563] italic">Agentic AI & Web Platforms</p>
-                    </div>
-                  </div>
-                  <span className="font-mono text-xs font-bold text-[#0F6B3C]">02</span>
-                </div>
+              {/* ── Layer: LAUNCH (bottom) ── */}
+              <polygon points="100,360 260,440 420,360 260,280" fill="#0B5230" />
+              <polygon points="100,360 260,440 260,470 100,390" fill="#052E1A" />
+              <polygon points="260,440 420,360 420,390 260,470" fill="#083D22" />
+              <text
+                x="190" y="388"
+                fill="#ffffff" fillOpacity="0.9"
+                fontSize="18" fontFamily="Space Grotesk, sans-serif"
+                fontStyle="italic" fontWeight="600"
+                transform="rotate(-26.5 190 388)"
+              >Launch</text>
 
-                {/* Block 3: Launch */}
-                <div className="group p-4 bg-[#f7f7f7] border border-[#0000000d] rounded-xl flex items-center justify-between transition-all hover:bg-[#E4F3EA] hover:border-[#0F6B3C]/30">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#0F6B3C] text-white flex items-center justify-center font-bold">
-                      <Rocket className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-[#111827]">Launch & Scale</h4>
-                      <p className="text-xs text-[#4B5563] italic">Continuous Operations</p>
-                    </div>
-                  </div>
-                  <span className="font-mono text-xs font-bold text-[#0F6B3C]">03</span>
-                </div>
-              </div>
+              {/* ── Layer: BUILD (middle) ── */}
+              <polygon points="100,305 260,385 420,305 260,225" fill="#0F6B3C" />
+              <polygon points="100,305 260,385 260,360 100,280" fill="#052E1A" />
+              <polygon points="260,385 420,305 420,330 260,410" fill="#0A5030" />
+              <text
+                x="200" y="335"
+                fill="#ffffff" fillOpacity="0.9"
+                fontSize="18" fontFamily="Space Grotesk, sans-serif"
+                fontStyle="italic" fontWeight="600"
+                transform="rotate(-26.5 200 335)"
+              >Build</text>
 
-              {/* Wireframe Orbit Badge */}
-              <div className="mt-6 pt-4 border-t border-[#0000000d] flex items-center justify-between text-xs text-[#6B7280]">
-                <span>KAMPALA · EAST AFRICA</span>
-                <span className="font-mono font-bold text-[#0F6B3C]">PRODUCT STUDIO</span>
-              </div>
-            </div>
+              {/* ── Layer: DESIGN (top) ── */}
+              <polygon points="100,250 260,330 420,250 260,170" fill="#14844A" />
+              <polygon points="100,250 260,330 260,305 100,225" fill="#0B5230" />
+              <polygon points="260,330 420,250 420,275 260,355" fill="#0F6B3C" />
+              <text
+                x="190" y="282"
+                fill="#ffffff" fillOpacity="0.9"
+                fontSize="18" fontFamily="Space Grotesk, sans-serif"
+                fontStyle="italic" fontWeight="600"
+                transform="rotate(-26.5 190 282)"
+              >Design</text>
+
+              {/* Small satellite cube */}
+              <rect x="408" y="390" width="32" height="32" rx="6" fill="#0F6B3C" />
+              <rect x="408" y="390" width="32" height="32" rx="6" stroke="#fff" strokeWidth="1" fill="none" strokeOpacity="0.4" />
+              <circle cx="420" cy="402" r="2.5" fill="#fff" fillOpacity="0.7" />
+              <circle cx="428" cy="410" r="2.5" fill="#fff" fillOpacity="0.7" />
+            </svg>
           </div>
         </div>
       </div>
