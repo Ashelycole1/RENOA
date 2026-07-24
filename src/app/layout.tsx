@@ -1,25 +1,15 @@
-import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+﻿import type { Metadata } from "next";
 import "./globals.css";
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "RENOA | Software Studio",
-  description: "Turning complex code into fluid reality. Agentic AI, Web3, and Gamified systems.",
+  description: "Product design, engineering, and AI operations from Kampala for teams across Africa and global markets.",
+  keywords: ["software studio", "product design", "Kampala", "Uganda", "web development", "AI", "RENOA"],
+  openGraph: {
+    title: "RENOA | Software Studio",
+    description: "Product design, engineering, and AI operations from Kampala for teams across Africa and global markets.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -28,12 +18,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
-    >
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
 }
-

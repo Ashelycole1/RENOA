@@ -18,7 +18,7 @@ export default function Nav({ onOpenBooking }: NavProps) {
   return (
     <div className="fixed left-0 right-0 top-0 z-[100] flex justify-center px-2 pt-4 md:px-4">
       <header
-        className="w-full max-w-[1160px] backdrop-blur-md"
+        className="w-full max-w-[1160px] rounded-xl border border-[#0000000a] bg-white/80 px-5 shadow-sm backdrop-blur-md"
         style={{
           opacity: mounted ? 1 : 0,
           transform: mounted ? "translateY(0)" : "translateY(-12px)",

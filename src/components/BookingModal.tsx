@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, Calendar, Send, CheckCircle2 } from "lucide-react";
+
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -43,7 +43,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           onClick={close}
           className="absolute top-5 right-5 p-1.5 text-[#a3a3a3] hover:text-[#0a0a0a] rounded-lg hover:bg-[#fafafa] transition-colors"
         >
-          <X className="w-5 h-5" />
+          <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
 
         {!submitted ? (
@@ -103,7 +103,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
               <div className="flex gap-3 pt-1">
                 <button type="submit" className="flex-1 btn btn-fill justify-center">
-                  <Send className="w-4 h-4" /> Send inquiry
+                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send inquiry
                 </button>
                 <a
                   href="https://cal.com"
@@ -111,7 +111,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   rel="noopener noreferrer"
                   className="btn btn-outline"
                 >
-                  <Calendar className="w-4 h-4" /> Cal.com
+                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Cal.com
                 </a>
               </div>
             </form>
@@ -119,7 +119,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         ) : (
           <div className="py-8 text-center space-y-4">
             <div className="w-14 h-14 bg-[#E6F2EC] rounded-full flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-7 h-7 text-[#0F6B3C]" />
+              <svg className="w-7 h-7 text-[#0F6B3C]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <h3 className="text-xl font-bold text-[#0a0a0a]">Inquiry received!</h3>
             <p className="text-sm text-[#525252]">

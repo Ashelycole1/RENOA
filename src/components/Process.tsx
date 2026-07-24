@@ -151,7 +151,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section id="services" className="px-4 py-6 md:py-8">
+    <section id="services" className="px-4 py-20 md:py-32">
       <div className="mx-auto max-w-[1200px]">
 
         {/* Header — 2-col, left H2 / right subline — matching Afro Labs */}

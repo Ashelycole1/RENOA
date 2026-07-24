@@ -1,6 +1,5 @@
 "use client";
 
-import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 export interface ProjectData {
   id: string;
@@ -47,7 +46,7 @@ export default function WorkCard({ project, index }: WorkCardProps) {
         <div>
           <h3 className="text-xl font-bold text-[#0a0a0a] flex items-center gap-1.5 group-hover:text-[#0F6B3C] transition-colors">
             {project.title}
-            <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
           </h3>
           {project.metrics && (
             <p className="text-xs text-[#a3a3a3] font-mono mt-0.5">{project.metrics}</p>
@@ -72,7 +71,7 @@ export default function WorkCard({ project, index }: WorkCardProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-xs font-semibold text-[#0F6B3C] hover:text-[#0B5230] transition-colors"
           >
-            Visit <ExternalLink className="w-3 h-3" />
+            Visit <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         ) : (
           <span className="text-xs font-mono text-amber-600">Coming soon</span>
