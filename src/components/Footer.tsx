@@ -88,7 +88,7 @@ export default function Footer() {
             <a href="https://twitter.com/renoa_tech" target="_blank" rel="noopener noreferrer" className="text-[12px] font-medium text-[var(--text-muted)] transition-colors duration-150 hover:text-[var(--text-primary)]">
               X
             </a>
-            <a href="https://linkedin.com/company/renoa-tech" target="_blank" rel="noopener noreferrer" className="text-[12px] font-medium text-[var(--text-muted)] transition-colors duration-150 hover:text-[var(--text-primary)]">
+            <a href="https://www.linkedin.com/company/renoa-collective/" target="_blank" rel="noopener noreferrer" className="text-[12px] font-medium text-[var(--text-muted)] transition-colors duration-150 hover:text-[var(--text-primary)]">
               LinkedIn
             </a>
           </div>
