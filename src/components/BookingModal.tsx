@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -13,7 +12,9 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    service: "Web & App Development",
+    company: "",
+    service: "Platform Development",
+    budget: "$5,000 - $10,000",
     message: "",
   });
 
@@ -31,101 +32,147 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={close}
     >
       <div
-        className="relative w-full max-w-md bg-white border border-[#e5e5e5] rounded-2xl p-8 shadow-xl"
+        className="relative w-full max-w-lg bg-white border border-[#e5e5e5] rounded-2xl p-6 sm:p-8 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close */}
+        {/* Close Button */}
         <button
           onClick={close}
           className="absolute top-5 right-5 p-1.5 text-[#a3a3a3] hover:text-[#0a0a0a] rounded-lg hover:bg-[#fafafa] transition-colors"
+          aria-label="Close modal"
         >
           <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
 
         {!submitted ? (
           <>
-            <span className="label block mb-2">Book a Call</span>
+            <span className="label block mb-2">Discovery Call</span>
             <h3 className="text-2xl font-bold text-[#0a0a0a] mb-1">
               Let&apos;s build something.
             </h3>
             <p className="text-sm text-[#525252] mb-6">
-              Connect with the RENOA team in Kampala — we respond within 24 hours.
+              Connect directly with RENOA&apos;s senior engineering team in Kampala. We reply within one business day.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Name</label>
-                <input
-                  type="text" required
-                  placeholder="Your name"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Your name"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="w-full px-3.5 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">
+                    Work Email *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="name@company.com"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="w-full px-3.5 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                  />
+                </div>
               </div>
-              <div>
-                <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Email</label>
-                <input
-                  type="email" required
-                  placeholder="you@company.com"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors"
-                />
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">
+                    Project Type
+                  </label>
+                  <select
+                    value={form.service}
+                    onChange={(e) => setForm({ ...form, service: e.target.value })}
+                    className="w-full px-3.5 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                  >
+                    <option value="Platform Development">Platform Development</option>
+                    <option value="Product Design">Product Design</option>
+                    <option value="AI & Automation">AI & Automation</option>
+                    <option value="Mobile Money Integration">Mobile Money Integration</option>
+                    <option value="Dedicated Squad">Dedicated Squad</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">
+                    Budget Range
+                  </label>
+                  <select
+                    value={form.budget}
+                    onChange={(e) => setForm({ ...form, budget: e.target.value })}
+                    className="w-full px-3.5 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                  >
+                    <option value="< $5,000">&lt; $5,000 / &lt; UGX 19M</option>
+                    <option value="$5,000 - $10,000">$5,000 - $10,000 / UGX 19M - 38M</option>
+                    <option value="$10,000 - $25,000">$10,000 - $25,000 / UGX 38M - 95M</option>
+                    <option value="$25,000+">$25,000+ / UGX 95M+</option>
+                  </select>
+                </div>
               </div>
+
               <div>
-                <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Service</label>
-                <select
-                  value={form.service}
-                  onChange={(e) => setForm({ ...form, service: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] focus:outline-none focus:border-[#0F6B3C] transition-colors"
-                >
-                  <option>Intelligence &amp; Automation</option>
-                  <option>Web &amp; App Development</option>
-                  <option>ICT Consultation</option>
-                  <option>Brand &amp; Design</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">Brief</label>
+                <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">
+                  Project Brief *
+                </label>
                 <textarea
                   rows={3}
-                  placeholder="What do you want to build?"
+                  required
+                  placeholder="Tell us what you're building, target timeline, or key technical challenges..."
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors resize-none"
+                  className="w-full px-3.5 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[var(--accent)] transition-colors resize-none"
                 />
               </div>
 
-              <div className="flex gap-3 pt-1">
-                <button type="submit" className="flex-1 btn btn-fill justify-center">
-                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send inquiry
-                </button>
-                <a
-                  href="https://cal.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
+              <div className="pt-2 flex flex-col gap-2.5">
+                <button
+                  type="submit"
+                  className="w-full inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-[var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:bg-[var(--accent-hover)]"
                 >
-                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Cal.com
-                </a>
+                  Send Inquiry & Request Call
+                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </button>
+
+                <div className="flex items-center justify-between text-xs text-[#737373] pt-1">
+                  <span>Prefer instant chat?</span>
+                  <a
+                    href="https://wa.me/256700000000?text=Hi%20RENOA%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-[#1E9E4B] hover:underline"
+                  >
+                    Open WhatsApp
+                    <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  </a>
+                </div>
               </div>
             </form>
           </>
         ) : (
           <div className="py-8 text-center space-y-4">
-            <div className="w-14 h-14 bg-[#E6F2EC] rounded-full flex items-center justify-center mx-auto">
-              <svg className="w-7 h-7 text-[#0F6B3C]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div className="w-14 h-14 bg-[#E4F3EA] rounded-full flex items-center justify-center mx-auto text-[var(--accent)]">
+              <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3 className="text-xl font-bold text-[#0a0a0a]">Inquiry received!</h3>
-            <p className="text-sm text-[#525252]">
-              Thanks, <strong>{form.name}</strong>. The RENOA team will reach out within 24 hours.
+            <p className="text-sm text-[#525252] max-w-xs mx-auto">
+              Thank you, {form.name}. Our engineering leads in Kampala will review your project brief and reply to <strong>{form.email}</strong> within 24 hours.
             </p>
-            <button onClick={close} className="btn btn-fill mx-auto">
+            <button
+              onClick={close}
+              className="mt-4 px-6 py-2.5 rounded-lg border border-[#e5e5e5] text-sm font-medium text-[#111] hover:bg-[#fafafa]"
+            >
               Done
             </button>
           </div>

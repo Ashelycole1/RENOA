@@ -6,9 +6,9 @@ const STEPS = [
   {
     num: "01",
     title: "Consultation",
-    desc: "We sit down with your team to learn your daily business operations, identify your main problems, and discover exactly what you need.",
-    output: "Problem Analysis",
-    // Afro Labs uses people/user icon for step 1
+    duration: "1 – 2 WEEKS",
+    desc: "We sit down with your team to learn your daily business operations, identify true bottlenecks, and define the core metrics of success.",
+    output: "Problem Analysis & Scope",
     iconPath: (
       <>
         <path opacity=".4" d="M9 2C6.38 2 4.25 4.13 4.25 6.75c0 2.57 2.01 4.65 4.63 4.74.08-.01.16-.01.22 0h.07a4.738 4.738 0 0 0 4.58-4.74C13.75 4.13 11.62 2 9 2Z" fill="currentColor"/>
@@ -20,9 +20,10 @@ const STEPS = [
   },
   {
     num: "02",
-    title: "Strategy",
-    desc: "We check what is technically possible, study the risks, and create a clear Product Requirement Document (PRD) and system blueprint.",
-    output: "Project Roadmap & PRD",
+    title: "Strategy & UX",
+    duration: "2 – 3 WEEKS",
+    desc: "We validate technical feasibility, architect database schemas, and create interactive Figma prototypes alongside an airtight PRD.",
+    output: "Interactive Prototype & PRD",
     iconPath: (
       <>
         <path opacity=".4" d="M21 2v12.1c0 1.9-1 2.9-2.9 2.9H5.9C4 17 3 16 3 14.1V2h18Z" fill="currentColor"/>
@@ -33,8 +34,9 @@ const STEPS = [
   {
     num: "03",
     title: "Development",
-    desc: "Our team writes clean, secure code and connects all necessary systems. We test everything thoroughly to make sure it works perfectly.",
-    output: "Working Software",
+    duration: "4 – 8 WEEKS",
+    desc: "Our engineering squad writes clean TypeScript, implements Mobile Money payment rails, and connects LLM APIs with continuous testing.",
+    output: "Production Working Software",
     iconPath: (
       <>
         <path opacity=".4" d="M22 15V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7h6c5 0 7-2 7-7Z" fill="currentColor"/>
@@ -44,9 +46,10 @@ const STEPS = [
   },
   {
     num: "04",
-    title: "Maintenance",
-    desc: "We don't just deliver and leave. We manage the system, fix issues, and continuously improve the software as your business grows.",
-    output: "Long-Term Support",
+    title: "Maintenance & SLA",
+    duration: "ONGOING",
+    desc: "We don't abandon your build. We monitor uptime, optimize cloud infrastructure, and ship continuous sprint enhancements as you scale.",
+    output: "Dedicated Growth SLA",
     iconPath: (
       <>
         <path opacity=".4" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" fill="currentColor"/>
@@ -75,7 +78,7 @@ function ProcessStep({ step, delay }: { step: typeof STEPS[0]; delay: number }) 
   return (
     <div
       ref={ref}
-      className="group relative flex flex-col p-8 md:p-10 transition-colors hover:bg-[#f7f7f7] overflow-hidden"
+      className="group relative flex flex-col p-8 md:p-9 transition-colors hover:bg-[#f7f7f9] overflow-hidden"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -85,26 +88,32 @@ function ProcessStep({ step, delay }: { step: typeof STEPS[0]; delay: number }) 
       {/* Accent top line on hover */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-[var(--accent)] transition-colors duration-300" />
 
-      {/* Step number + icon badge */}
-      <div className="mb-12 flex items-center justify-between relative z-10">
-        <span className="text-[14px] font-mono tracking-widest text-[var(--accent)]">
-          {step.num[0]} {step.num[1]}
-        </span>
-        {/* Gradient icon badge — exact Afro Labs style */}
+      {/* Step number + duration + icon */}
+      <div className="mb-10 flex items-center justify-between relative z-10">
+        <div>
+          <span className="text-[14px] font-mono tracking-widest text-[var(--accent)] font-bold">
+            {step.num}
+          </span>
+          <span className="block text-[10px] font-mono text-[#9ca3af] font-semibold mt-0.5">
+            {step.duration}
+          </span>
+        </div>
+
+        {/* Gradient icon badge */}
         <div
-          className="relative flex h-12 w-12 items-center justify-center text-white transition-transform duration-300 group-hover:-translate-y-1"
+          className="relative flex h-11 w-11 items-center justify-center text-white transition-transform duration-300 group-hover:-translate-y-1"
           style={{
             borderRadius: "var(--radius-md)",
             border: "1px solid var(--accent-hover)",
             background: "linear-gradient(145deg, var(--accent-hover), var(--accent) 58%, var(--accent-deep))",
-            boxShadow: "0 10px 24px var(--btn-glow), inset 0 1px 0 rgba(255,255,255,0.26), inset 0 -10px 18px rgba(0,0,0,0.16)",
+            boxShadow: "0 8px 20px var(--btn-glow), inset 0 1px 0 rgba(255,255,255,0.26)",
           }}
         >
           <svg
             className="relative z-10 drop-shadow-sm"
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="22"
+            height="22"
             viewBox="0 0 24 24"
             fill="none"
           >
@@ -115,21 +124,20 @@ function ProcessStep({ step, delay }: { step: typeof STEPS[0]; delay: number }) 
 
       {/* Title + description */}
       <h3
-        className="mb-4 text-[24px] tracking-[-0.02em] text-[#111] relative z-10"
-        style={{ fontWeight: 500 }}
+        className="mb-3 text-[22px] tracking-[-0.02em] text-[#111] relative z-10 font-bold"
       >
         {step.title}
       </h3>
-      <p className="mb-12 text-[14px] leading-[1.6] text-[#525252] flex-grow relative z-10">
+      <p className="mb-10 text-[14px] leading-[1.65] text-[#525252] flex-grow relative z-10">
         {step.desc}
       </p>
 
       {/* Output */}
-      <div className="mt-auto relative z-10">
-        <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#a3a3a3] mb-1">
-          Output
+      <div className="mt-auto relative z-10 pt-4 border-t border-[#0000000a]">
+        <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#9ca3af] mb-1 font-mono">
+          Concrete Output
         </span>
-        <span className="text-[14px] font-medium text-[#111]">{step.output}</span>
+        <span className="text-[13px] font-semibold text-[#111]">{step.output}</span>
       </div>
     </div>
   );
@@ -151,47 +159,45 @@ export default function Process() {
   }, []);
 
   return (
-    <section id="services" className="px-4 py-20 md:py-32">
+    <section className="px-4 py-20 md:py-32 bg-[#fafafa]">
       <div className="mx-auto max-w-[1200px]">
-
-        {/* Header — 2-col, left H2 / right subline — matching Afro Labs */}
+        {/* Header */}
         <div
           ref={headerRef}
-          className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8"
+          className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8"
           style={{
             opacity: headerVisible ? 1 : 0,
             transform: headerVisible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.5s ease, transform 0.5s ease",
           }}
         >
-          <div className="max-w-[600px]">
-            <div className="mb-6 flex items-center gap-3">
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
-                The Process
+          <div className="max-w-[620px]">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--accent)] font-mono">
+                The Delivery Framework
               </span>
               <div className="h-[1px] w-8 bg-[var(--accent)]" />
             </div>
             <h2
-              className="text-[36px] leading-[1.05] tracking-[-0.04em] text-[#111] md:text-[56px]"
+              className="text-[34px] leading-[1.08] tracking-[-0.04em] text-[#111] md:text-[52px]"
               style={{ fontFamily: "var(--font-sans)", fontWeight: 400 }}
             >
               How we turn ideas into reality.
             </h2>
           </div>
-          <p className="max-w-[400px] text-[15px] leading-[1.65] text-[#525252] pb-2">
-            Our process is built around momentum and clarity. Each phase turns uncertainty into a concrete output the next phase can depend on.
+          <p className="max-w-[420px] text-[15px] leading-[1.65] text-[#525252] pb-1">
+            Our engineering process is built around momentum and predictability. Each sprint turns uncertainty into a concrete, testable deliverable.
           </p>
         </div>
 
         {/* Steps grid */}
-        <div className="relative w-full bg-white shadow-sm border border-[#0000000d]" style={{ borderRadius: "var(--radius-md)" }}>
+        <div className="relative w-full bg-white shadow-sm border border-[#0000000d] rounded-2xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#0000000d]">
             {STEPS.map((step, i) => (
               <ProcessStep key={step.num} step={step} delay={i * 80} />
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

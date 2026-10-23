@@ -2,13 +2,34 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "RENOA | Software Studio",
-  description: "Product design, engineering, and AI operations from Kampala for teams across Africa and global markets.",
-  keywords: ["software studio", "product design", "Kampala", "Uganda", "web development", "AI", "RENOA"],
+  title: "RENOA | Software Studio — Kampala, Uganda",
+  description: "Product design, platform engineering, and AI operations from Kampala for teams across East Africa and global markets. Book a free discovery call.",
+  keywords: ["software studio", "product design", "Kampala", "Uganda", "web development", "AI automation", "Mobile Money integration", "MTN MoMo", "RENOA", "East Africa tech"],
+  metadataBase: new URL("https://renoa.tech"),
+  alternates: {
+    canonical: "https://renoa.tech",
+  },
   openGraph: {
-    title: "RENOA | Software Studio",
-    description: "Product design, engineering, and AI operations from Kampala for teams across Africa and global markets.",
+    title: "RENOA | Software Studio — Kampala, Uganda",
+    description: "Product design, platform engineering, and AI operations from Kampala for teams across East Africa and global markets.",
     type: "website",
+    url: "https://renoa.tech",
+    siteName: "RENOA",
+    images: [
+      {
+        url: "/icon.png",
+        width: 512,
+        height: 512,
+        alt: "RENOA Software Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RENOA | Software Studio — Kampala, Uganda",
+    description: "Product design, engineering, and AI from Kampala for East Africa and global markets.",
+    site: "@renoa_tech",
+    images: ["/icon.png"],
   },
   icons: {
     icon: [
