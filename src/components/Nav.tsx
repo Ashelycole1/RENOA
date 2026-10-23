@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavProps {
   onOpenBooking: () => void;
@@ -12,7 +13,8 @@ export default function Nav({ onOpenBooking }: NavProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const id = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(id);
   }, []);
 
   return (
@@ -29,9 +31,17 @@ export default function Nav({ onOpenBooking }: NavProps) {
           {/* Logo */}
           <Link
             href="/"
-            className="flex shrink-0 items-center rounded-sm outline-none focus-visible:ring-2"
+            className="group flex shrink-0 items-center gap-2 rounded-sm outline-none focus-visible:ring-2"
             aria-label="RENOA home"
           >
+            <Image
+              src="/favicon.png"
+              alt="RENOA symbol"
+              width={26}
+              height={26}
+              className="h-6 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              priority
+            />
             <span className="text-[18px] font-semibold tracking-[-0.04em] text-[var(--text-primary,#111)]">
               renoa
             </span>

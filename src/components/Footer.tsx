@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -23,7 +24,14 @@ export default function Footer() {
         <div className="grid gap-10 py-14 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:py-20">
           <div>
             {/* Logo */}
-            <Link href="/" className="mb-6 inline-flex w-fit items-center text-[var(--text-primary)]">
+            <Link href="/" className="group mb-6 inline-flex w-fit items-center gap-2.5 text-[var(--text-primary)]">
+              <Image
+                src="/favicon.png"
+                alt="RENOA symbol"
+                width={28}
+                height={28}
+                className="h-7 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              />
               <span className="text-[20px] font-semibold tracking-[-0.04em]">renoa</span>
               <span className="ml-0.5 mb-3 inline-block w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
             </Link>
