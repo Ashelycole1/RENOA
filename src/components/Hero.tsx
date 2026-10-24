@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+import InteractiveServiceStack from "./InteractiveServiceStack";
+
 interface HeroProps {
   onOpenBooking: () => void;
 }
@@ -37,9 +39,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       </div>
 
       <div className="mx-auto max-w-[1160px] px-6 pb-24 pt-36 md:px-10 md:pb-32 md:pt-44">
-        {/* Hero grid: left text / right illustration */}
+        {/* Hero grid: left text / right interactive 3D stack */}
         <div
-          className="grid w-full items-center gap-16 md:grid-cols-[minmax(0,1.15fr)_minmax(340px,480px)] md:gap-14"
+          className="grid grid-cols-1 lg:grid-cols-2 w-full items-center gap-12 lg:gap-10"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(24px)",
@@ -132,46 +134,16 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
           </div>
 
-          {/* Right: 3D isometric illustration */}
+          {/* Right: Interactive 3D Service Stack */}
           <div
-            className="flex w-full justify-center md:justify-end"
+            className="flex w-full justify-center lg:justify-end"
             style={{
               opacity: mounted ? 1 : 0,
               transform: mounted ? "translateY(0)" : "translateY(32px)",
               transition: "opacity 0.65s ease 0.1s, transform 0.65s ease 0.1s",
             }}
           >
-            <svg
-              viewBox="0 0 520 480"
-              className="h-auto w-full max-w-[440px] md:max-w-[500px]"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <ellipse cx="260" cy="240" rx="230" ry="115" stroke="#2563EB" strokeOpacity="0.18" strokeWidth="1" strokeDasharray="4 6" />
-              <line x1="260" y1="28" x2="260" y2="160" stroke="#2563EB" strokeOpacity="0.3" strokeWidth="1" />
-              <g transform="translate(260, 100)">
-                <circle cx="0" cy="0" r="52" fill="#2563EB" />
-                <circle cx="0" cy="0" r="52" stroke="#fff" strokeWidth="0.8" fill="none" strokeOpacity="0.6" />
-                <ellipse cx="0" cy="0" rx="52" ry="23" stroke="#fff" strokeWidth="0.7" fill="none" strokeOpacity="0.45" />
-                <ellipse cx="0" cy="0" rx="52" ry="40" stroke="#fff" strokeWidth="0.7" fill="none" strokeOpacity="0.3" />
-                <ellipse cx="0" cy="0" rx="23" ry="52" stroke="#fff" strokeWidth="0.7" fill="none" strokeOpacity="0.45" />
-                <ellipse cx="0" cy="0" rx="40" ry="52" stroke="#fff" strokeWidth="0.7" fill="none" strokeOpacity="0.3" />
-                <line x1="-52" y1="0" x2="52" y2="0" stroke="#fff" strokeWidth="0.7" strokeOpacity="0.55" />
-                <line x1="0" y1="-52" x2="0" y2="52" stroke="#fff" strokeWidth="0.7" strokeOpacity="0.55" />
-              </g>
-              <polygon points="110,322 260,392 410,322 260,252" fill="#1D4ED8" />
-              <polygon points="110,322 260,392 260,430 110,360" fill="#04180F" />
-              <polygon points="410,322 260,392 260,430 410,360" fill="#062315" />
-              <text x="220" y="380" fill="#ffffff" fillOpacity="0.65" fontSize="13" fontFamily="var(--font-mono)" letterSpacing="0.05em">Launch</text>
-              <polygon points="110,252 260,322 410,252 260,182" fill="#2563EB" />
-              <polygon points="110,252 260,322 260,270 110,200" fill="#1D4ED8" />
-              <polygon points="410,252 260,322 260,270 410,200" fill="#073B22" />
-              <text x="226" y="278" fill="#ffffff" fillOpacity="0.65" fontSize="13" fontFamily="var(--font-mono)" letterSpacing="0.05em">Build</text>
-              <polygon points="110,182 260,252 410,182 260,112" fill="#148F50" />
-              <polygon points="110,182 260,252 260,200 110,130" fill="#2563EB" />
-              <polygon points="410,182 260,252 260,200 410,130" fill="#1D4ED8" />
-              <text x="220" y="206" fill="#ffffff" fillOpacity="0.75" fontSize="13" fontFamily="var(--font-mono)" letterSpacing="0.05em">Design</text>
-            </svg>
+            <InteractiveServiceStack onOpenBooking={onOpenBooking} />
           </div>
         </div>
       </div>
