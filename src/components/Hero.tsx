@@ -109,22 +109,22 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
 
             {/* Social proof bar */}
-            <div className="mt-10 flex items-center gap-6 border-t border-[#0000000d] pt-8">
+            <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-[#e5e7eb] pt-8">
               <div className="text-center md:text-left">
                 <p className="text-[26px] font-bold tracking-tight text-[#111]">4</p>
                 <p className="text-[12px] text-[#737373] font-mono">Live products</p>
               </div>
-              <div className="h-8 w-px bg-[#0000000d]" />
+              <div className="h-8 w-px bg-[#d1d5db]" />
               <div className="text-center md:text-left">
                 <p className="text-[26px] font-bold tracking-tight text-[#111]">2026</p>
                 <p className="text-[12px] text-[#737373] font-mono">Founded</p>
               </div>
-              <div className="h-8 w-px bg-[#0000000d]" />
+              <div className="h-8 w-px bg-[#d1d5db]" />
               <div className="text-center md:text-left">
                 <p className="text-[26px] font-bold tracking-tight text-[#111]">6</p>
-                <p className="text-[12px] text-[#737373] font-mono">Co-founders & leads</p>
+                <p className="text-[12px] text-[#737373] font-mono">Co-founders &amp; leads</p>
               </div>
-              <div className="h-8 w-px bg-[#0000000d]" />
+              <div className="h-8 w-px bg-[#d1d5db]" />
               <div className="text-center md:text-left">
                 <p className="text-[26px] font-bold tracking-tight text-[#111]">100%</p>
                 <p className="text-[12px] text-[#737373] font-mono">IP ownership</p>

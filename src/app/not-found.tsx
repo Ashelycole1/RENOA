@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Nav from "@/components/Nav";
@@ -8,7 +8,7 @@ import { ArrowLeft } from "lucide-react";
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-[#fdfdfd] text-[#111827] flex flex-col justify-between selection:bg-[#2563EB] selection:text-white">
-      <Nav onOpenBooking={() => {}} />
+      <Nav onOpenBooking={() => { }} />
 
       <main className="py-32 flex flex-col items-center justify-center text-center px-4">
         <div className="font-mono text-6xl font-extrabold text-[#2563EB] mb-4">404</div>
@@ -18,7 +18,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="btn-primary"
+          className="inline-flex items-center gap-2 rounded-lg bg-[#2563EB] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1D4ED8]"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to RENOA</span>
