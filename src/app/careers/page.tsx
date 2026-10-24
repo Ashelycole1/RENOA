@@ -49,7 +49,7 @@ export default function CareersPage() {
             <div className="space-y-6">
               <span className="label">CAREERS</span>
               <h1 className="text-5xl lg:text-6xl font-bold text-[#0a0a0a] tracking-tight">
-                We hire people who <span className="text-[#0F6B3C]">ship.</span>
+                We hire people who <span className="text-[#2563EB]">ship.</span>
               </h1>
               <p className="text-lg text-[#525252] leading-relaxed max-w-md">
                 We do not always publish open roles. We are always looking for exceptional talent with proof of work, strong taste, and the ability to turn ideas into shipped products.
@@ -73,24 +73,24 @@ export default function CareersPage() {
                   cy="200"
                   rx="200"
                   ry="85"
-                  stroke="#0F6B3C"
+                  stroke="#2563EB"
                   strokeOpacity="0.25"
                   strokeWidth="1.5"
                   strokeDasharray="5 5"
                 />
                 {/* Vertical stem */}
-                <line x1="260" y1="60" x2="260" y2="148" stroke="#0F6B3C" strokeOpacity="0.35" strokeWidth="1.5" />
+                <line x1="260" y1="60" x2="260" y2="148" stroke="#2563EB" strokeOpacity="0.35" strokeWidth="1.5" />
 
                 {/* Globe */}
                 <g transform="translate(260,140)">
-                  <circle cx="0" cy="0" r="46" fill="#0F6B3C" />
+                  <circle cx="0" cy="0" r="46" fill="#2563EB" />
                   <ellipse cx="0" cy="0" rx="46" ry="20" stroke="#fff" strokeWidth="1" fill="none" strokeOpacity="0.5" />
                   <ellipse cx="0" cy="0" rx="22" ry="46" stroke="#fff" strokeWidth="1" fill="none" strokeOpacity="0.5" />
                   <line x1="-46" y1="0" x2="46" y2="0" stroke="#fff" strokeWidth="1" strokeOpacity="0.5" />
                 </g>
 
                 {/* ── Layer: LAUNCH (bottom) ── */}
-                <polygon points="100,360 260,440 420,360 260,280" fill="#0B5230" />
+                <polygon points="100,360 260,440 420,360 260,280" fill="#1D4ED8" />
                 <polygon points="100,360 260,440 260,470 100,390" fill="#052E1A" />
                 <polygon points="260,440 420,360 420,390 260,470" fill="#083D22" />
                 <text
@@ -102,7 +102,7 @@ export default function CareersPage() {
                 >Launch</text>
 
                 {/* ── Layer: BUILD (middle) ── */}
-                <polygon points="100,305 260,385 420,305 260,225" fill="#0F6B3C" />
+                <polygon points="100,305 260,385 420,305 260,225" fill="#2563EB" />
                 <polygon points="100,305 260,385 260,360 100,280" fill="#052E1A" />
                 <polygon points="260,385 420,305 420,330 260,410" fill="#0A5030" />
                 <text
@@ -115,8 +115,8 @@ export default function CareersPage() {
 
                 {/* ── Layer: DESIGN (top) ── */}
                 <polygon points="100,250 260,330 420,250 260,170" fill="#14844A" />
-                <polygon points="100,250 260,330 260,305 100,225" fill="#0B5230" />
-                <polygon points="260,330 420,250 420,275 260,355" fill="#0F6B3C" />
+                <polygon points="100,250 260,330 260,305 100,225" fill="#1D4ED8" />
+                <polygon points="260,330 420,250 420,275 260,355" fill="#2563EB" />
                 <text
                   x="190" y="282"
                   fill="#ffffff" fillOpacity="0.9"
@@ -126,7 +126,7 @@ export default function CareersPage() {
                 >Design</text>
 
                 {/* Small satellite cube */}
-                <rect x="408" y="390" width="32" height="32" rx="6" fill="#0F6B3C" />
+                <rect x="408" y="390" width="32" height="32" rx="6" fill="#2563EB" />
                 <rect x="408" y="390" width="32" height="32" rx="6" stroke="#fff" strokeWidth="1" fill="none" strokeOpacity="0.4" />
                 <circle cx="420" cy="402" r="2.5" fill="#fff" fillOpacity="0.7" />
                 <circle cx="428" cy="410" r="2.5" fill="#fff" fillOpacity="0.7" />
@@ -148,16 +148,16 @@ export default function CareersPage() {
               {ROLES.map((role) => (
                 <div
                   key={role.id}
-                  className="card p-6 flex flex-col md:flex-row md:items-center justify-between gap-5 hover:border-[#0F6B3C]/40"
+                  className="card p-6 flex flex-col md:flex-row md:items-center justify-between gap-5 hover:border-[#2563EB]/40"
                 >
                   <div className="space-y-2">
                     <div className="flex flex-wrap items-center gap-2 text-xs text-[#a3a3a3]">
                       <span className="tag">{role.dept}</span>
                       <span className="flex items-center gap-1 font-mono">
-                        <MapPin className="w-3 h-3 text-[#0F6B3C]" /> {role.location}
+                        <MapPin className="w-3 h-3 text-[#2563EB]" /> {role.location}
                       </span>
                       <span className="flex items-center gap-1 font-mono">
-                        <Clock className="w-3 h-3 text-[#0F6B3C]" /> {role.type}
+                        <Clock className="w-3 h-3 text-[#2563EB]" /> {role.type}
                       </span>
                     </div>
                     <h3 className="text-lg font-bold text-[#0a0a0a]">{role.title}</h3>
@@ -165,7 +165,7 @@ export default function CareersPage() {
                   </div>
 
                   {applied === role.id ? (
-                    <span className="px-4 py-2 bg-[#E6F2EC] text-[#0F6B3C] text-xs font-semibold rounded-lg shrink-0">
+                    <span className="px-4 py-2 bg-[#E6F2EC] text-[#2563EB] text-xs font-semibold rounded-lg shrink-0">
                       Application sent ✓
                     </span>
                   ) : (
@@ -205,13 +205,13 @@ export default function CareersPage() {
                   type={i === 1 ? "email" : i === 2 ? "url" : "text"}
                   required
                   placeholder={ph}
-                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors"
+                  className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#2563EB] transition-colors"
                 />
               ))}
               <textarea
                 rows={3}
                 placeholder="Recent products shipped or brief intro..."
-                className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] resize-none focus:outline-none focus:border-[#0F6B3C] transition-colors"
+                className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] resize-none focus:outline-none focus:border-[#2563EB] transition-colors"
               />
               <div className="flex gap-3 pt-1">
                 <button type="submit" className="flex-1 btn btn-fill justify-center">

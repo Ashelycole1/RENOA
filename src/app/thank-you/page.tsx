@@ -5,7 +5,7 @@ export default function ThankYouPage() {
     <div className="min-h-screen bg-[#fdfdfd] flex items-center justify-center px-4">
       <div className="text-center max-w-xl">
         <div className="mb-8 flex justify-center">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#E4F3EA] border border-[var(--accent)]/20">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#EAF2FF] border border-[var(--accent)]/20">
             <svg className="w-10 h-10 text-[var(--accent)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
@@ -32,7 +32,7 @@ export default function ThankYouPage() {
             href="https://wa.me/256700000000?text=Hi%20RENOA%2C%20I%20just%20submitted%20an%20inquiry."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-[#25D366] bg-[#25D366]/10 px-7 text-sm font-medium text-[#1E9E4B] transition-colors hover:bg-[#25D366]/20"
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-[#2563EB] bg-[#2563EB]/10 px-7 text-sm font-medium text-[#2563EB] transition-colors hover:bg-[#2563EB]/20"
           >
             Chat on WhatsApp
           </a>

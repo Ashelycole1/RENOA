@@ -16,7 +16,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Product strategist focused on venture scaling and commercializing digital infrastructure across East Africa.",
     linkedIn: "https://www.linkedin.com/company/renoa-collective/",
     initials: "EV",
-    avatarColor: "#0F6B3C"
+    avatarColor: "#2563EB"
   },
   {
     name: "Natozo Martha",
@@ -61,6 +61,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Full-stack systems architect & AI engineer leading software design, LLM orchestration, and core platform delivery.",
     linkedIn: "https://www.linkedin.com/in/ashelycole-niwasiima-627258330/",
     initials: "AN",
-    avatarColor: "#0F6B3C"
+    avatarColor: "#2563EB"
   }
 ];

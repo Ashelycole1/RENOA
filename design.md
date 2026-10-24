@@ -160,7 +160,7 @@ Prefer borders over heavy shadows for a clean, flat-modern look.
 | Primary | Filled `--brand`, white text, 12 px radius, 48 px height (44 px minimum on mobile) | Main CTA |
 | Secondary | Transparent, 1 px border, `--text` | Supporting action ("See our work") |
 | Tertiary / link | Text + arrow icon, underline on hover | Inline actions ("View all projects →") |
-| WhatsApp | Filled `#25D366` with the WhatsApp icon | Contact only |
+| WhatsApp | Filled `#2563EB` with the WhatsApp icon | Contact only |
 
 - States: default, hover (slight lift + darker fill), focus (2 px offset focus ring in `--brand`), active, disabled, loading.
 - Use an SVG arrow icon, not a text glyph (fixes the current "View all ?" bug).

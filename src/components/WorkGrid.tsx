@@ -44,7 +44,7 @@ function FeaturedProjectCard({ project, index }: { project: Project; index: numb
 
           <div className="flex items-center gap-2">
             {project.status === "Live" ? (
-              <span className="inline-flex items-center gap-1 rounded-full bg-[#E4F3EA] px-2.5 py-0.5 text-[11px] font-medium text-[var(--accent)] border border-[#0F6B3C]/15 font-mono">
+              <span className="inline-flex items-center gap-1 rounded-full bg-[#EAF2FF] px-2.5 py-0.5 text-[11px] font-medium text-[var(--accent)] border border-[#2563EB]/15 font-mono">
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
                 Live
               </span>

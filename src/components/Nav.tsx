@@ -143,7 +143,7 @@ export default function Nav({ onOpenBooking }: NavProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="w-full inline-flex min-h-[44px] items-center justify-center gap-2 border border-[#25D366] bg-[#25D366]/10 px-5 text-[14px] font-medium text-[#1E9E4B] transition-colors"
+                className="w-full inline-flex min-h-[44px] items-center justify-center gap-2 border border-[#2563EB] bg-[#2563EB]/10 px-5 text-[14px] font-medium text-[#2563EB] transition-colors"
                 style={{ borderRadius: "var(--radius-md)" }}
               >
                 Chat on WhatsApp

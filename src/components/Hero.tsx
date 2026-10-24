@@ -31,7 +31,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           style={{
             width: "800px",
             height: "500px",
-            background: "radial-gradient(ellipse at center top, #0F6B3C0a 0%, transparent 70%)",
+            background: "radial-gradient(ellipse at center top, #2563EB0a 0%, transparent 70%)",
           }}
         />
       </div>
@@ -49,7 +49,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           {/* Left: text */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             {/* Eyebrow chip */}
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0F6B3C22] bg-[var(--accent-soft)] px-3.5 py-1.5">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#2563EB22] bg-[var(--accent-soft)] px-3.5 py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
               <span className="text-[12px] font-semibold text-[var(--accent)] font-mono tracking-wide">
                 Software Studio · Kampala, Uganda
@@ -87,7 +87,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
               <Link
                 href="/work"
-                className="inline-flex min-h-[50px] items-center gap-2 rounded-xl border border-[#0000001a] bg-white px-7 text-[15px] font-medium text-[#111] transition-all hover:bg-[var(--accent-soft)] hover:border-[#0F6B3C30]"
+                className="inline-flex min-h-[50px] items-center gap-2 rounded-xl border border-[#0000001a] bg-white px-7 text-[15px] font-medium text-[#111] transition-all hover:bg-[var(--accent-soft)] hover:border-[#2563EB30]"
               >
                 See our work
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -147,10 +147,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <ellipse cx="260" cy="240" rx="230" ry="115" stroke="#0F6B3C" strokeOpacity="0.18" strokeWidth="1" strokeDasharray="4 6" />
-              <line x1="260" y1="28" x2="260" y2="160" stroke="#0F6B3C" strokeOpacity="0.3" strokeWidth="1" />
+              <ellipse cx="260" cy="240" rx="230" ry="115" stroke="#2563EB" strokeOpacity="0.18" strokeWidth="1" strokeDasharray="4 6" />
+              <line x1="260" y1="28" x2="260" y2="160" stroke="#2563EB" strokeOpacity="0.3" strokeWidth="1" />
               <g transform="translate(260, 100)">
-                <circle cx="0" cy="0" r="52" fill="#0F6B3C" />
+                <circle cx="0" cy="0" r="52" fill="#2563EB" />
                 <circle cx="0" cy="0" r="52" stroke="#fff" strokeWidth="0.8" fill="none" strokeOpacity="0.6" />
                 <ellipse cx="0" cy="0" rx="52" ry="23" stroke="#fff" strokeWidth="0.7" fill="none" strokeOpacity="0.45" />
                 <ellipse cx="0" cy="0" rx="52" ry="40" stroke="#fff" strokeWidth="0.7" fill="none" strokeOpacity="0.3" />
@@ -159,17 +159,17 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 <line x1="-52" y1="0" x2="52" y2="0" stroke="#fff" strokeWidth="0.7" strokeOpacity="0.55" />
                 <line x1="0" y1="-52" x2="0" y2="52" stroke="#fff" strokeWidth="0.7" strokeOpacity="0.55" />
               </g>
-              <polygon points="110,322 260,392 410,322 260,252" fill="#0B5230" />
+              <polygon points="110,322 260,392 410,322 260,252" fill="#1D4ED8" />
               <polygon points="110,322 260,392 260,430 110,360" fill="#04180F" />
               <polygon points="410,322 260,392 260,430 410,360" fill="#062315" />
               <text x="220" y="380" fill="#ffffff" fillOpacity="0.65" fontSize="13" fontFamily="var(--font-mono)" letterSpacing="0.05em">Launch</text>
-              <polygon points="110,252 260,322 410,252 260,182" fill="#0F6B3C" />
-              <polygon points="110,252 260,322 260,270 110,200" fill="#0B5230" />
+              <polygon points="110,252 260,322 410,252 260,182" fill="#2563EB" />
+              <polygon points="110,252 260,322 260,270 110,200" fill="#1D4ED8" />
               <polygon points="410,252 260,322 260,270 410,200" fill="#073B22" />
               <text x="226" y="278" fill="#ffffff" fillOpacity="0.65" fontSize="13" fontFamily="var(--font-mono)" letterSpacing="0.05em">Build</text>
               <polygon points="110,182 260,252 410,182 260,112" fill="#148F50" />
-              <polygon points="110,182 260,252 260,200 110,130" fill="#0F6B3C" />
-              <polygon points="410,182 260,252 260,200 410,130" fill="#0B5230" />
+              <polygon points="110,182 260,252 260,200 110,130" fill="#2563EB" />
+              <polygon points="410,182 260,252 260,200 410,130" fill="#1D4ED8" />
               <text x="220" y="206" fill="#ffffff" fillOpacity="0.75" fontSize="13" fontFamily="var(--font-mono)" letterSpacing="0.05em">Design</text>
             </svg>
           </div>

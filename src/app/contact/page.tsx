@@ -33,16 +33,16 @@ export default function ContactPage() {
               <h3 className="text-lg font-bold text-[#0a0a0a]">Direct Contact</h3>
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                  <Mail className="w-4 h-4 text-[#0F6B3C] mt-0.5 shrink-0" />
+                  <Mail className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
                   <div>
                     <p className="text-[10px] font-mono text-[#a3a3a3] uppercase mb-0.5">Email</p>
-                    <a href="mailto:hello@renoa.dev" className="font-medium text-[#0a0a0a] hover:text-[#0F6B3C] transition-colors">
+                    <a href="mailto:hello@renoa.dev" className="font-medium text-[#0a0a0a] hover:text-[#2563EB] transition-colors">
                       hello@renoa.dev
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-[#0F6B3C] mt-0.5 shrink-0" />
+                  <MapPin className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
                   <div>
                     <p className="text-[10px] font-mono text-[#a3a3a3] uppercase mb-0.5">Location</p>
                     <p className="font-medium text-[#0a0a0a]">Kampala, Uganda</p>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                       placeholder="Your name"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors"
+                      className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#2563EB] transition-colors"
                     />
                   </div>
                   <div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                       placeholder="you@company.com"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors"
+                      className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#2563EB] transition-colors"
                     />
                   </div>
                   <div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                       placeholder="Tell us what you want to build..."
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#0F6B3C] transition-colors resize-none"
+                      className="w-full px-4 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] placeholder-[#a3a3a3] focus:outline-none focus:border-[#2563EB] transition-colors resize-none"
                     />
                   </div>
                   <button type="submit" className="btn btn-fill w-full justify-center">
@@ -101,7 +101,7 @@ export default function ContactPage() {
               ) : (
                 <div className="py-12 text-center space-y-4">
                   <div className="w-14 h-14 bg-[#E6F2EC] rounded-full flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-7 h-7 text-[#0F6B3C]" />
+                    <CheckCircle2 className="w-7 h-7 text-[#2563EB]" />
                   </div>
                   <h3 className="text-xl font-bold text-[#0a0a0a]">Message sent!</h3>
                   <p className="text-sm text-[#525252]">The RENOA team will respond within 24 hours.</p>

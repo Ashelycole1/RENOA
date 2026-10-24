@@ -21,7 +21,7 @@ export default function Home() {
   const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#fdfdfd] text-[#111827] selection:bg-[#0F6B3C] selection:text-white">
+    <div className="min-h-screen bg-[#fdfdfd] text-[#111827] selection:bg-[#2563EB] selection:text-white">
       {/* Top Navbar */}
       <Nav onOpenBooking={() => setBookingOpen(true)} />
 

@@ -151,7 +151,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     href="https://wa.me/256700000000?text=Hi%20RENOA%2C%20I%20would%20like%20to%20discuss%20a%20project."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-medium text-[#1E9E4B] hover:underline"
+                    className="inline-flex items-center gap-1 font-medium text-[#2563EB] hover:underline"
                   >
                     Open WhatsApp
                     <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -162,7 +162,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           </>
         ) : (
           <div className="py-8 text-center space-y-4">
-            <div className="w-14 h-14 bg-[#E4F3EA] rounded-full flex items-center justify-center mx-auto text-[var(--accent)]">
+            <div className="w-14 h-14 bg-[#EAF2FF] rounded-full flex items-center justify-center mx-auto text-[var(--accent)]">
               <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3 className="text-xl font-bold text-[#0a0a0a]">Inquiry received!</h3>

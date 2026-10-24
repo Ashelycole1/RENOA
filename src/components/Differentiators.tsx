@@ -55,7 +55,7 @@ export default function Differentiators() {
               key={diff.title}
               className="rounded-2xl border border-[#0000000d] bg-white p-7 shadow-xs space-y-4 hover:border-[var(--accent)] hover:shadow-md transition-all duration-200"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#E4F3EA] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-[#EAF2FF] flex items-center justify-center">
                 {diff.icon}
               </div>
               <h3 className="text-lg font-bold text-[#111]">
@@ -69,7 +69,7 @@ export default function Differentiators() {
         </div>
 
         {/* Bottom banner */}
-        <div className="mt-12 rounded-2xl border border-[#0F6B3C]/20 bg-[#E4F3EA]/50 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-12 rounded-2xl border border-[#2563EB]/20 bg-[#EAF2FF]/50 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
             <h4 className="text-base font-bold text-[#111]">
               Ready to validate your product architecture?

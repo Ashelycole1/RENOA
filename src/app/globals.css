@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ── Exact Afro Labs CSS custom properties (accent recolored to dark green) ── */
+/* ── Exact Afro Labs CSS custom properties (accent recolored to blue) ── */
 :root {
   --bg: #fdfdfd;
   --bg-muted: #f7f7f7;
@@ -20,12 +20,12 @@
   --text-primary: #111111;
   --text-secondary: #525252;
   --text-muted: #a3a3a3;
-  --accent: #0F6B3C;
-  --accent-hover: #0B5230;
-  --accent-soft: #E4F3EA;
-  --accent-deep: #04180F;
-  --btn-bg: #0F6B3C;
-  --btn-glow: #0F6B3C38;
+  --accent: #2563EB;
+  --accent-hover: #1D4ED8;
+  --accent-soft: #EAF2FF;
+  --accent-deep: #0F172A;
+  --btn-bg: #2563EB;
+  --btn-glow: #2563EB38;
   --btn-sec-bg: #fff;
   --btn-sec-text: #111;
   --btn-text: #fff;
@@ -181,7 +181,7 @@ body {
   gap: 8px;
   padding: 6px 12px;
   background: var(--accent-soft);
-  border: 1px solid #0F6B3C22;
+  border: 1px solid #2563EB22;
   border-radius: 100px;
   font-size: 12px;
   font-weight: 500;
@@ -190,7 +190,7 @@ body {
   transition: background var(--default-transition-duration) ease;
 }
 .chip:hover {
-  background: #d1e8da;
+  background: #dbeafe;
 }
 .chip-dot {
   width: 6px;

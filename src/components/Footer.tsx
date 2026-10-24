@@ -61,7 +61,7 @@ export default function Footer() {
                 href="https://wa.me/256700000000?text=Hi%20RENOA%20team%2C%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-[#25D366] bg-[#25D366]/10 px-5 text-[14px] font-medium text-[#1E9E4B] transition-colors hover:bg-[#25D366]/20"
+                className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-[#2563EB] bg-[#2563EB]/10 px-5 text-[14px] font-medium text-[#2563EB] transition-colors hover:bg-[#2563EB]/20"
               >
                 WhatsApp Chat
               </a>

@@ -106,7 +106,7 @@ export default function SecurityPage() {
 
         {/* AI Security Deep Dive */}
         <section className="mb-16">
-          <div className="rounded-2xl border border-[var(--accent)]/20 bg-[#E4F3EA]/30 p-8">
+          <div className="rounded-2xl border border-[var(--accent)]/20 bg-[#EAF2FF]/30 p-8">
             <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--accent)] font-mono block mb-4">
               AI SYSTEMS SECURITY
             </span>

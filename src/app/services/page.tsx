@@ -106,7 +106,7 @@ export default function ServicesPage() {
                 >
                   <div className="space-y-4">
                     {m.badge && (
-                      <span className="inline-block rounded-full bg-[#E4F3EA] px-2.5 py-0.5 text-[10px] font-mono font-bold text-[var(--accent)]">
+                      <span className="inline-block rounded-full bg-[#EAF2FF] px-2.5 py-0.5 text-[10px] font-mono font-bold text-[var(--accent)]">
                         {m.badge}
                       </span>
                     )}

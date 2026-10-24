@@ -95,7 +95,7 @@ function CapabilityCard({ item, delay }: { item: typeof CAPABILITIES[0], delay: 
       }}
     >
       <div>
-        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#E4F3EA] text-[var(--accent)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
+        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#EAF2FF] text-[var(--accent)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
           {item.icon}
         </div>
 

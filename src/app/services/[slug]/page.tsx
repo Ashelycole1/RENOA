@@ -80,7 +80,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#111]">What we deliver.</h2>
                 <p className="text-base leading-relaxed text-[var(--text-secondary)]">{service.longDesc}</p>
-                <div className="mt-2 rounded-xl border border-[var(--accent)]/15 bg-[#E4F3EA]/30 p-4 text-sm">
+                <div className="mt-2 rounded-xl border border-[var(--accent)]/15 bg-[#EAF2FF]/30 p-4 text-sm">
                   <span className="font-bold text-[#111]">Who this is for: </span>
                   <span className="text-[var(--text-secondary)]">{service.targetAudience}</span>
                 </div>
@@ -185,7 +185,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                     <div className="flex items-center gap-2 mb-4">
                       <span className="text-xs font-bold font-mono text-[var(--accent)] uppercase">{relatedProject.badge}</span>
                       {relatedProject.status === "Live" && (
-                        <span className="inline-flex items-center gap-1 rounded-full bg-[#E4F3EA] px-2 py-0.5 text-[10px] font-medium text-[var(--accent)] font-mono">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-[#EAF2FF] px-2 py-0.5 text-[10px] font-medium text-[var(--accent)] font-mono">
                           <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
                           Live
                         </span>
@@ -240,7 +240,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                     href={`https://wa.me/256700000000?text=Hi%20RENOA%2C%20I%27m%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex min-h-[40px] items-center justify-center gap-1.5 rounded-xl border border-[#25D366] bg-[#25D366]/10 text-xs font-semibold text-[#1E9E4B] hover:bg-[#25D366]/20 transition-colors"
+                    className="w-full inline-flex min-h-[40px] items-center justify-center gap-1.5 rounded-xl border border-[#2563EB] bg-[#2563EB]/10 text-xs font-semibold text-[#2563EB] hover:bg-[#2563EB]/20 transition-colors"
                   >
                     Chat on WhatsApp
                   </a>

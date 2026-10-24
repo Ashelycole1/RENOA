@@ -26,7 +26,7 @@ export default function TechStackStrip() {
           {TECH_ITEMS.map((item) => (
             <div
               key={item.name}
-              className="rounded-xl border border-[#0000000d] bg-[#fafafa] p-4 text-center transition-colors hover:border-[var(--accent)] hover:bg-[#E4F3EA]/30 group"
+              className="rounded-xl border border-[#0000000d] bg-[#fafafa] p-4 text-center transition-colors hover:border-[var(--accent)] hover:bg-[#EAF2FF]/30 group"
             >
               <p className="text-sm font-bold text-[#111] group-hover:text-[var(--accent)] transition-colors">
                 {item.name}

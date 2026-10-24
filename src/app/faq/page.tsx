@@ -116,7 +116,7 @@ export default function FAQPage() {
                 href="https://wa.me/256700000000?text=Hi%20RENOA%2C%20I%20have%20a%20question."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-[#25D366] bg-[#25D366]/10 px-7 text-sm font-medium text-[#1E9E4B] transition-colors hover:bg-[#25D366]/20"
+                className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-[#2563EB] bg-[#2563EB]/10 px-7 text-sm font-medium text-[#2563EB] transition-colors hover:bg-[#2563EB]/20"
               >
                 Chat on WhatsApp
               </a>

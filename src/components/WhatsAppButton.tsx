@@ -37,10 +37,10 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with RENOA on WhatsApp"
-        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-200 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/30 active:scale-95"
+        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#2563EB] text-white shadow-lg transition-transform duration-200 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2563EB]/30 active:scale-95"
       >
         {/* Subtle breathing ripple */}
-        <span className="absolute -inset-1 -z-10 animate-ping rounded-full bg-[#25D366]/30 opacity-75 duration-1000" />
+        <span className="absolute -inset-1 -z-10 animate-ping rounded-full bg-[#2563EB]/30 opacity-75 duration-1000" />
 
         {/* WhatsApp SVG Icon */}
         <svg

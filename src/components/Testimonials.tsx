@@ -62,7 +62,7 @@ export default function Testimonials() {
               </div>
 
               <div className="mt-8 pt-5 border-t border-[#0000000a] flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#E4F3EA] text-[var(--accent)] font-mono font-bold flex items-center justify-center text-xs shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#EAF2FF] text-[var(--accent)] font-mono font-bold flex items-center justify-center text-xs shrink-0">
                   {t.initials}
                 </div>
                 <div>

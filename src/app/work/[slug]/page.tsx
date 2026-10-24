@@ -41,7 +41,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
               <span className="label">{project.badge}</span>
               <div className="flex items-center gap-2">
                 {project.status === "Live" ? (
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E4F3EA] px-3 py-1 text-xs font-medium text-[var(--accent)] border border-[#0F6B3C]/15 font-mono">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#EAF2FF] px-3 py-1 text-xs font-medium text-[var(--accent)] border border-[#2563EB]/15 font-mono">
                     <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
                     Live in Production
                   </span>
@@ -154,7 +154,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
 
               {/* Testimonial Quote (if present) */}
               {project.quote && (
-                <div className="rounded-2xl border border-[#0F6B3C]/15 bg-[#E4F3EA]/40 p-8 space-y-4">
+                <div className="rounded-2xl border border-[#2563EB]/15 bg-[#EAF2FF]/40 p-8 space-y-4">
                   <div className="flex items-center gap-1 text-[var(--accent)]">
                     {[...Array(5)].map((_, i) => (
                       <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
@@ -249,7 +249,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
                     href="https://wa.me/256700000000?text=Hi%20RENOA%2C%20I%20reviewed%20your%20case%20study%20for%20"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex min-h-[40px] items-center justify-center gap-1.5 rounded-xl border border-[#25D366] bg-[#25D366]/10 text-xs font-semibold text-[#1E9E4B] hover:bg-[#25D366]/20 transition-colors"
+                    className="w-full inline-flex min-h-[40px] items-center justify-center gap-1.5 rounded-xl border border-[#2563EB] bg-[#2563EB]/10 text-xs font-semibold text-[#2563EB] hover:bg-[#2563EB]/20 transition-colors"
                   >
                     Chat on WhatsApp
                   </a>
