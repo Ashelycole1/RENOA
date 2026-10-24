@@ -41,7 +41,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       <div className="mx-auto max-w-[1160px] px-6 pb-24 pt-36 md:px-10 md:pb-32 md:pt-44">
         {/* Hero grid: left text / right interactive 3D stack */}
         <div
-          className="grid grid-cols-1 lg:grid-cols-2 w-full items-center gap-12 lg:gap-10"
+          className="grid grid-cols-1 lg:grid-cols-2 w-full items-start gap-12 lg:gap-10"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(24px)",
