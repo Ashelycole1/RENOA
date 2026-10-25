@@ -6,7 +6,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { TEAM_MEMBERS } from "@/data/team";
+import LeadershipContainers from "@/components/LeadershipContainers";
+
 
 const VALUES = [
   {
@@ -161,46 +162,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team */}
-        <section className="wrapper max-w-[1160px] py-20">
-          <div className="mb-12">
-            <span className="label">LEADERSHIP TEAM</span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-[#111]">The co-founders.</h2>
-            <p className="mt-4 max-w-xl text-base text-[var(--text-secondary)] leading-relaxed">
-              Six people from Kampala who decided to build the software studio East Africa needed.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {TEAM_MEMBERS.map((member) => (
-              <div
-                key={member.name}
-                className="group rounded-2xl border border-[#0000000d] bg-white p-7 shadow-xs hover:border-[var(--accent)] hover:shadow-md transition-all duration-200"
-              >
-                <div
-                  className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl text-white text-base font-bold font-mono"
-                  style={{ background: member.avatarColor }}
-                >
-                  {member.initials}
-                </div>
-                <h3 className="text-lg font-bold text-[#111]">{member.name}</h3>
-                <p className="text-xs font-mono text-[var(--accent)] font-semibold mt-0.5">{member.role}</p>
-                <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">{member.bio}</p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="text-xs font-mono text-[#9ca3af]">{member.location}</span>
-                  {member.linkedIn && (
-                    <a
-                      href={member.linkedIn}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-medium text-[var(--accent)] hover:underline"
-                    >
-                      LinkedIn →
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Leadership Containers Structure */}
+        <section className="wrapper max-w-[1160px] py-16">
+          <LeadershipContainers />
         </section>
 
         {/* Timeline / Milestones */}
