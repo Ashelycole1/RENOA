@@ -164,7 +164,7 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
         className="relative w-full flex flex-col items-center justify-center my-1"
         style={{
           perspective: "1100px",
-          minHeight: "240px",
+          minHeight: "380px",
           paddingTop: "2px",
           paddingBottom: "10px",
         }}
@@ -174,6 +174,7 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
           style={{
             transform: `rotateX(${15 + tilt.x}deg) rotateY(${-10 + tilt.y}deg) rotateZ(1deg)`,
             transformStyle: "preserve-3d",
+            minHeight: "350px",
           }}
         >
           {SERVICES.map((item, index) => {
@@ -274,7 +275,7 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
       </div>
 
       {/* ── CTA Button — sits cleanly below the card stack ── */}
-      <div className="mt-10 flex justify-center w-full">
+      <div className="relative z-30 mt-6 flex justify-center w-full">
         <Link
           href="/contact"
           className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-lg bg-[#2563EB] px-5 text-[13.5px] font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md active:scale-[0.98]"
