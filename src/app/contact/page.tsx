@@ -36,8 +36,8 @@ export default function ContactPage() {
                   <Mail className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
                   <div>
                     <p className="text-[10px] font-mono text-[#a3a3a3] uppercase mb-0.5">Email</p>
-                    <a href="mailto:hello@renoa.dev" className="font-medium text-[#0a0a0a] hover:text-[#2563EB] transition-colors">
-                      hello@renoa.dev
+                    <a href="mailto:renoacollective@gmail.com" className="font-medium text-[#0a0a0a] hover:text-[#2563EB] transition-colors">
+                      renoacollective@gmail.com
                     </a>
                   </div>
                 </div>

@@ -117,8 +117,8 @@ export default function Footer() {
             <Link href="/privacy" className="text-[14px] text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">Privacy Policy</Link>
             <Link href="/terms" className="text-[14px] text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">Terms of Service</Link>
             <div className="pt-2">
-              <a href="mailto:hello@renoa.tech" className="text-[14px] font-semibold text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors">
-                hello@renoa.tech
+              <a href="mailto:renoacollective@gmail.com" className="text-[14px] font-semibold text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors">
+                renoacollective@gmail.com
               </a>
             </div>
           </div>
