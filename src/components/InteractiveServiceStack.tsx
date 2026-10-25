@@ -273,25 +273,15 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
         </div>
       </div>
 
-      {/* ── Single Blue Action Button (No other texts or boxes) ── */}
-      <div className="mt-7 flex justify-center w-full">
-        {onOpenBooking ? (
-          <button
-            onClick={onOpenBooking}
-            className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-8 text-[15px] font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md active:scale-[0.98]"
-          >
-            <span>Let&apos;s build something together</span>
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        ) : (
-          <Link
-            href="/#contact"
-            className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-8 text-[15px] font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md active:scale-[0.98]"
-          >
-            <span>Let&apos;s build something together</span>
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        )}
+      {/* ── CTA Button — sits cleanly below the card stack ── */}
+      <div className="mt-10 flex justify-center w-full">
+        <Link
+          href="/contact"
+          className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-lg bg-[#2563EB] px-5 text-[13.5px] font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md active:scale-[0.98]"
+        >
+          <span>Let&apos;s build something together</span>
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
     </div>
   );

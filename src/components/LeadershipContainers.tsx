@@ -85,8 +85,8 @@ export default function LeadershipContainers({
         key={slot.id || index}
         className="relative flex flex-col items-center w-full max-w-[260px] sm:max-w-[280px] transition-transform duration-200 hover:-translate-y-1"
       >
-        {/* Photo Container Frame with Snippet-style Blue Border */}
-        <div className="relative w-full aspect-[4/5] border-2 border-[#1E60D5] bg-white rounded-none flex flex-col justify-between overflow-hidden shadow-sm">
+        {/* Photo Container Frame */}
+        <div className="relative w-full aspect-[4/5] bg-white rounded-lg flex flex-col justify-between overflow-hidden shadow-md">
           {/* Upper Image Slot (Empty/Placeholder ready for user's images) */}
           <div className="relative flex-1 w-full flex flex-col items-center justify-center bg-[#f8fafc]/80 p-4">
             {slot.image ? (
@@ -120,7 +120,7 @@ export default function LeadershipContainers({
           </div>
 
           {/* Name Bar across the bottom of the container */}
-          <div className="w-full bg-[#1A4EA8] py-2.5 px-3 text-center border-t border-[#3B82F6] z-10 flex items-center justify-center min-h-[46px]">
+          <div className="w-full bg-[#1A4EA8] py-2.5 px-3 text-center z-10 flex items-center justify-center min-h-[46px]">
             <h4 className="text-sm sm:text-base font-bold text-white tracking-wide leading-tight">
               {slot.name}
             </h4>
@@ -129,7 +129,7 @@ export default function LeadershipContainers({
 
         {/* Role / Designation Tag centered below overlapping bottom */}
         <div className="relative -mt-3.5 z-20 w-full flex justify-center px-2">
-          <div className="bg-white border border-[#1E60D5]/30 px-3 py-1.5 shadow-sm text-center max-w-[96%] min-h-[32px] flex items-center justify-center">
+          <div className="bg-white px-3 py-1.5 shadow-sm text-center max-w-[96%] min-h-[32px] flex items-center justify-center rounded-b-md">
             <span className="text-[10px] sm:text-[11px] font-bold text-[#1A4EA8] tracking-wide uppercase font-mono leading-tight">
               {slot.role}
             </span>
