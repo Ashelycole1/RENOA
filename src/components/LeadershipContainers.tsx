@@ -22,36 +22,42 @@ export const LEADERSHIP_MEMBERS: LeadershipSlot[] = [
     name: "Rwothomio Evans .E.",
     role: "CEO and Systems Analyst and Architect",
     linkedin: "https://www.linkedin.com/in/rwothomio-evans-e-7948ab398",
+    image: "/team/rwothomio.png",
   },
   {
     id: 2,
     name: "Natozo Martha Patience",
     role: "COO and Developer",
     linkedin: "https://www.linkedin.com/in/martha-natozo-bba5ab395/",
+    image: "/team/natozo.png",
   },
   {
     id: 3,
     name: "Niwasiima Ashelycole",
     role: "CTO and Senior Developer and Designer",
     linkedin: "https://www.linkedin.com/in/niwasiima-ashelycole-091698390/",
+    image: "/team/niwasiima.jpg",
   },
   {
     id: 4,
     name: "Egabo Aaron",
     role: "Products Manager, Senior Analyst and Developer",
     linkedin: "https://www.linkedin.com/in/egaboaaron/",
+    image: "/team/egabo.jpg",
   },
   {
     id: 5,
     name: "Onyango John Steven",
     role: "Sales And Marketing Manager, UI UX design",
     linkedin: "https://www.linkedin.com/in/john-steven-onyango-9794a1376/",
+    image: "/team/onyango.jpg",
   },
   {
     id: 6,
     name: "Alimpa Ann Hillary",
     role: "Finance Manager",
     linkedin: "https://www.linkedin.com/in/alimpa-hillary-9ab7b53b8/",
+    image: "/team/alimpa.jpg",
   },
 ];
 
@@ -88,7 +94,8 @@ export default function LeadershipContainers({
               <img
                 src={slot.image}
                 alt={slot.name}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-[center_15%]"
+                style={{ objectPosition: "center 15%" }}
               />
             ) : (
               <div className="flex flex-col items-center justify-center text-center select-none">
