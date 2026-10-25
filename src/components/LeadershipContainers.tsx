@@ -4,8 +4,8 @@ import React from "react";
 
 export interface LeadershipSlot {
   id: string | number;
-  name?: string;
-  role?: string;
+  name: string;
+  role: string;
   image?: string;
 }
 
@@ -14,25 +14,49 @@ interface LeadershipContainersProps {
   slots?: LeadershipSlot[];
 }
 
-// 6 slots for 6 positions
-const DEFAULT_SLOTS: LeadershipSlot[] = [
-  { id: 1, name: "Name Slot 01", role: "Role Slot 01" },
-  { id: 2, name: "Name Slot 02", role: "Role Slot 02" },
-  { id: 3, name: "Name Slot 03", role: "Role Slot 03" },
-  { id: 4, name: "Name Slot 04", role: "Role Slot 04" },
-  { id: 5, name: "Name Slot 05", role: "Role Slot 05" },
-  { id: 6, name: "Name Slot 06", role: "Role Slot 06" },
+// 6 Leadership members in chronological order
+export const LEADERSHIP_MEMBERS: LeadershipSlot[] = [
+  {
+    id: 1,
+    name: "Rwothomio Evans .E.",
+    role: "CEO and Systems Analyst and Architect",
+  },
+  {
+    id: 2,
+    name: "Natozo Martha Patience",
+    role: "COO and Developer",
+  },
+  {
+    id: 3,
+    name: "Niwasiima Ashelycole",
+    role: "CTO and Senior Developer and Designer",
+  },
+  {
+    id: 4,
+    name: "Egabo Aaron",
+    role: "Products Manager, Senior Analyst and Developer",
+  },
+  {
+    id: 5,
+    name: "Onyango John Steven",
+    role: "Sales And Marketing Manager, UI UX design",
+  },
+  {
+    id: 6,
+    name: "Alimpa Ann Hillary",
+    role: "Finance Manager",
+  },
 ];
 
 export default function LeadershipContainers({
   className = "",
-  slots = DEFAULT_SLOTS,
+  slots = LEADERSHIP_MEMBERS,
 }: LeadershipContainersProps) {
   const renderCard = (slot: LeadershipSlot, index: number) => {
     return (
       <div
         key={slot.id || index}
-        className="relative flex flex-col items-center w-full max-w-[250px] sm:max-w-[270px] transition-transform duration-200 hover:-translate-y-1"
+        className="relative flex flex-col items-center w-full max-w-[260px] sm:max-w-[280px] transition-transform duration-200 hover:-translate-y-1"
       >
         {/* Photo Container Frame with Snippet-style Blue Border */}
         <div className="relative w-full aspect-[4/5] border-2 border-[#1E60D5] bg-white rounded-none flex flex-col justify-between overflow-hidden shadow-sm">
@@ -42,7 +66,7 @@ export default function LeadershipContainers({
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={slot.image}
-                alt={slot.name || "Team member"}
+                alt={slot.name}
                 className="w-full h-full object-cover object-top"
               />
             ) : (
@@ -61,25 +85,25 @@ export default function LeadershipContainers({
                   </svg>
                 </div>
                 <span className="text-[11px] font-mono font-medium uppercase tracking-wider text-[#64748b]">
-                  {slot.name ? "Photo Slot" : "Image Slot"}
+                  Photo Slot
                 </span>
               </div>
             )}
           </div>
 
           {/* Name Bar across the bottom of the container */}
-          <div className="w-full bg-[#1A4EA8] py-2.5 px-3 text-center border-t border-[#3B82F6] z-10">
-            <h4 className="text-sm sm:text-base font-bold text-white tracking-wide truncate">
-              {slot.name || "Name Slot"}
+          <div className="w-full bg-[#1A4EA8] py-2.5 px-3 text-center border-t border-[#3B82F6] z-10 flex items-center justify-center min-h-[46px]">
+            <h4 className="text-sm sm:text-base font-bold text-white tracking-wide leading-tight">
+              {slot.name}
             </h4>
           </div>
         </div>
 
         {/* Role / Designation Tag centered below overlapping bottom */}
-        <div className="relative -mt-3.5 z-20">
-          <div className="bg-white border border-[#1E60D5]/30 px-4 py-1 shadow-sm text-center">
-            <span className="text-[11px] sm:text-xs font-bold text-[#1A4EA8] tracking-wider uppercase font-mono whitespace-nowrap">
-              {slot.role || "Role Slot"}
+        <div className="relative -mt-3.5 z-20 w-full flex justify-center px-2">
+          <div className="bg-white border border-[#1E60D5]/30 px-3 py-1.5 shadow-sm text-center max-w-[96%] min-h-[32px] flex items-center justify-center">
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#1A4EA8] tracking-wide uppercase font-mono leading-tight">
+              {slot.role}
             </span>
           </div>
         </div>

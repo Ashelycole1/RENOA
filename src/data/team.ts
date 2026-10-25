@@ -10,17 +10,17 @@ export interface TeamMember {
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: "Evans",
-    role: "Chief Executive Officer",
+    name: "Rwothomio Evans .E.",
+    role: "CEO and Systems Analyst and Architect",
     location: "Kampala, Uganda",
     bio: "Product strategist focused on venture scaling and commercializing digital infrastructure across East Africa.",
     linkedIn: "https://www.linkedin.com/company/renoa-collective/",
-    initials: "EV",
+    initials: "RE",
     avatarColor: "#2563EB"
   },
   {
-    name: "Natozo Martha",
-    role: "Chief Operating Officer",
+    name: "Natozo Martha Patience",
+    role: "COO and Developer",
     location: "Kampala, Uganda",
     bio: "Operational architect coordinating client delivery cadences, talent operations, and project governance.",
     linkedIn: "https://www.linkedin.com/company/renoa-collective/",
@@ -28,8 +28,17 @@ export const TEAM_MEMBERS: TeamMember[] = [
     avatarColor: "#05668D"
   },
   {
+    name: "Niwasiima Ashelycole",
+    role: "CTO and Senior Developer and Designer",
+    location: "Kampala, Uganda",
+    bio: "Full-stack systems architect & AI engineer leading software design, LLM orchestration, and core platform delivery.",
+    linkedIn: "https://www.linkedin.com/in/ashelycole-niwasiima-627258330/",
+    initials: "NA",
+    avatarColor: "#2563EB"
+  },
+  {
     name: "Egabo Aaron",
-    role: "Project Manager",
+    role: "Products Manager, Senior Analyst and Developer",
     location: "Kampala, Uganda",
     bio: "Agile delivery lead ensuring every sprint ships on time, scope is tightly governed, and client expectations are exceeded.",
     linkedIn: "https://www.linkedin.com/company/renoa-collective/",
@@ -37,17 +46,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
     avatarColor: "#028090"
   },
   {
-    name: "Alimpa Anne Hillary",
-    role: "Finance Lead",
-    location: "Kampala, Uganda",
-    bio: "Financial strategist managing client contract structures, multi-currency cash flows, and fiscal compliance.",
-    linkedIn: "https://www.linkedin.com/company/renoa-collective/",
-    initials: "AH",
-    avatarColor: "#00A896"
-  },
-  {
     name: "Onyango John Steven",
-    role: "Marketing Lead",
+    role: "Sales And Marketing Manager, UI UX design",
     location: "Kampala, Uganda",
     bio: "Growth marketer bridging product engineering with audience acquisition and enterprise brand partnerships.",
     linkedIn: "https://www.linkedin.com/company/renoa-collective/",
@@ -55,12 +55,12 @@ export const TEAM_MEMBERS: TeamMember[] = [
     avatarColor: "#02C39A"
   },
   {
-    name: "Niwasiima Ashelycole",
-    role: "Co-Founder & CTO",
+    name: "Alimpa Ann Hillary",
+    role: "Finance Manager",
     location: "Kampala, Uganda",
-    bio: "Full-stack systems architect & AI engineer leading software design, LLM orchestration, and core platform delivery.",
-    linkedIn: "https://www.linkedin.com/in/ashelycole-niwasiima-627258330/",
-    initials: "AN",
-    avatarColor: "#2563EB"
+    bio: "Financial strategist managing client contract structures, multi-currency cash flows, and fiscal compliance.",
+    linkedIn: "https://www.linkedin.com/company/renoa-collective/",
+    initials: "AA",
+    avatarColor: "#00A896"
   }
 ];
