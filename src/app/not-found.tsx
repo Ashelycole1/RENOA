@@ -1,14 +1,18 @@
-﻿"use client";
+"use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import BookingModal from "@/components/BookingModal";
 import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
+  const [bookingOpen, setBookingOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#fdfdfd] text-[#111827] flex flex-col justify-between selection:bg-[#2563EB] selection:text-white">
-      <Nav onOpenBooking={() => { }} />
+      <Nav onOpenBooking={() => setBookingOpen(true)} />
 
       <main className="py-32 flex flex-col items-center justify-center text-center px-4">
         <div className="font-mono text-6xl font-extrabold text-[#2563EB] mb-4">404</div>
@@ -26,6 +30,7 @@ export default function NotFound() {
       </main>
 
       <Footer />
+      <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
     </div>
   );
 }

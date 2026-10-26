@@ -60,7 +60,7 @@ export default function ContactPage() {
             </div>
 
             {/* Form column */}
-            <div className="lg:col-span-3 card p-7">
+            <div id="inquiry" className="lg:col-span-3 card p-7 scroll-mt-28">
               {!submitted ? (
                 <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
                   <h3 className="text-lg font-bold text-[#0a0a0a] mb-2">Project Inquiry</h3>

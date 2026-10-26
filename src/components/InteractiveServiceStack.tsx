@@ -164,9 +164,9 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
         className="relative w-full flex flex-col items-center justify-center my-1"
         style={{
           perspective: "1100px",
-          minHeight: "380px",
-          paddingTop: "2px",
-          paddingBottom: "10px",
+          minHeight: "350px",
+          paddingTop: "4px",
+          paddingBottom: "8px",
         }}
       >
         <div
@@ -174,7 +174,7 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
           style={{
             transform: `rotateX(${15 + tilt.x}deg) rotateY(${-10 + tilt.y}deg) rotateZ(1deg)`,
             transformStyle: "preserve-3d",
-            minHeight: "350px",
+            minHeight: "320px",
           }}
         >
           {SERVICES.map((item, index) => {
@@ -183,15 +183,15 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
             const IconComponent = item.icon;
 
             // Stepped diagonal coordinates
-            const stepX = index * 10;
-            const stepY = index * 36;
+            const stepX = index * 8;
+            const stepY = index * 28;
             const baseZ = (SERVICES.length - index) * 5;
 
             // Hover / selection elevation
-            const activeXShift = isSelected ? -20 : isHovered ? -14 : 0;
-            const activeYShift = isSelected ? -5 : isHovered ? -3 : 0;
-            const activeZShift = isSelected ? 46 : isHovered ? 30 : 0;
-            const activeScale = isSelected ? 1.03 : isHovered ? 1.015 : 1;
+            const activeXShift = isSelected ? -18 : isHovered ? -12 : 0;
+            const activeYShift = isSelected ? -4 : isHovered ? -2 : 0;
+            const activeZShift = isSelected ? 42 : isHovered ? 26 : 0;
+            const activeScale = isSelected ? 1.025 : isHovered ? 1.012 : 1;
 
             return (
               <div
@@ -207,17 +207,17 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
                   transform: `translate3d(${stepX + activeXShift}px, ${stepY + activeYShift}px, ${baseZ + activeZShift}px) scale(${activeScale})`,
                   transformStyle: "preserve-3d",
                   zIndex: isSelected ? 40 : 20 - index,
-                  marginTop: index === 0 ? 0 : "-18px",
+                  marginTop: index === 0 ? 0 : "-14px",
                 }}
               >
                 {/* Glowing Translucent Glass Card */}
                 <div
-                  className="relative flex items-center justify-between rounded-[18px] px-4 sm:px-5 py-3 transition-all duration-300"
+                  className="relative flex items-center justify-between rounded-[18px] px-4 sm:px-5 py-2.5 sm:py-3 transition-all duration-300"
                   style={{
                     background: isSelected ? item.activeGradient : item.gradient,
                     boxShadow: isSelected
-                      ? `0 16px 38px -6px ${item.glowColor}, inset 0 1px 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 2px 0 rgba(0, 0, 0, 0.2)`
-                      : `0 8px 20px -4px ${item.glowColor}, inset 0 1px 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.15)`,
+                      ? `0 16px 36px -6px ${item.glowColor}, inset 0 1px 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 2px 0 rgba(0, 0, 0, 0.2)`
+                      : `0 8px 18px -4px ${item.glowColor}, inset 0 1px 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.15)`,
                     border: isSelected
                       ? "1.5px solid rgba(255, 255, 255, 0.9)"
                       : "1px solid rgba(255, 255, 255, 0.45)",
@@ -247,7 +247,7 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
                       {item.number}
                     </span>
                     <span
-                      className="text-[13px] sm:text-[13.5px] font-bold tracking-tight text-white leading-snug drop-shadow-xs"
+                      className="text-[12.5px] sm:text-[13px] font-bold tracking-tight text-white leading-snug drop-shadow-xs"
                     >
                       {item.title}
                     </span>
@@ -274,14 +274,14 @@ export default function InteractiveServiceStack({ onOpenBooking }: InteractiveSe
         </div>
       </div>
 
-      {/* ── CTA Button — sits cleanly below the card stack ── */}
+      {/* ── CTA Button — sits cleanly below the card stack, never overlapping ── */}
       <div className="relative z-30 mt-6 flex justify-center w-full">
         <Link
-          href="/contact"
-          className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-lg bg-[#2563EB] px-5 text-[13.5px] font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md active:scale-[0.98]"
+          href="/contact#inquiry"
+          className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-7 text-[14px] font-medium text-white shadow-sm transition-all duration-200 hover:bg-[var(--accent-hover)] hover:shadow-md active:scale-[0.98]"
         >
-          <span>Let&apos;s build something together</span>
-          <ArrowRight className="h-3.5 w-3.5" />
+          <span>Request a build</span>
+          <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </div>
