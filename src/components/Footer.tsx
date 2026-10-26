@@ -78,7 +78,7 @@ export default function Footer() {
             </span>
             <Link href="/" className="text-[14px] text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">Home</Link>
             <Link href="/about" className="text-[14px] text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">About Us</Link>
-            <Link href="/pricing" className="text-[14px] text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">Pricing & Models</Link>
+            <Link href="/pricing" className="text-[14px] text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">Engagement Models</Link>
             <Link href="/careers" className="text-[14px] text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">Careers (Hiring)</Link>
             <Link href="/contact" className="text-[14px] text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]">Contact</Link>
           </div>

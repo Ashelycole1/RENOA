@@ -14,7 +14,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     email: "",
     company: "",
     service: "Platform Development",
-    budget: "$5,000 - $10,000",
+    timeline: "ASAP (2-4 weeks)",
     message: "",
   });
 
@@ -107,17 +107,17 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-[#525252] mb-1 uppercase tracking-wider">
-                    Budget Range
+                    Target Timeline
                   </label>
                   <select
-                    value={form.budget}
-                    onChange={(e) => setForm({ ...form, budget: e.target.value })}
+                    value={form.timeline}
+                    onChange={(e) => setForm({ ...form, timeline: e.target.value })}
                     className="w-full px-3.5 py-2.5 bg-[#fafafa] border border-[#e5e5e5] rounded-lg text-sm text-[#0a0a0a] focus:outline-none focus:border-[var(--accent)] transition-colors"
                   >
-                    <option value="< $5,000">&lt; $5,000 / &lt; UGX 19M</option>
-                    <option value="$5,000 - $10,000">$5,000 - $10,000 / UGX 19M - 38M</option>
-                    <option value="$10,000 - $25,000">$10,000 - $25,000 / UGX 38M - 95M</option>
-                    <option value="$25,000+">$25,000+ / UGX 95M+</option>
+                    <option value="ASAP (within 2-4 weeks)">ASAP (within 2-4 weeks)</option>
+                    <option value="1 - 2 months">1 – 2 months</option>
+                    <option value="3 - 6 months">3 – 6 months</option>
+                    <option value="Flexible / Ongoing">Flexible / Ongoing</option>
                   </select>
                 </div>
               </div>

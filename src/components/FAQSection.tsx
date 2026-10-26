@@ -19,7 +19,7 @@ export default function FAQSection({ limit = 5 }: { limit?: number }) {
             Frequently Asked Questions
           </h2>
           <p className="text-sm md:text-base text-[var(--text-secondary)]">
-            Everything you need to know about working with RENOA, our payment terms, timelines, and code ownership.
+            Everything you need to know about working with RENOA, our engagement models, timelines, and code ownership.
           </p>
         </div>
 

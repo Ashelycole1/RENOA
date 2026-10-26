@@ -1,7 +1,7 @@
 export interface FAQItem {
   question: string;
   answer: string;
-  category: "General" | "Pricing & Payments" | "Process & Timeline" | "IP & Security" | "Support";
+  category: "General" | "Engagement & Milestones" | "Process & Timeline" | "IP & Security" | "Support";
 }
 
 export const FAQS: FAQItem[] = [
@@ -11,19 +11,19 @@ export const FAQS: FAQItem[] = [
     answer: "RENOA is headquartered in Kampala, Uganda (East Africa Time, UTC+3). Our timezone provides 4 to 6 hours of clean working overlap with Europe and the Middle East, and convenient early-morning synchronization with the US East Coast. We communicate seamlessly via Slack, WhatsApp, Google Meet, and Loom asynchronous video walk-throughs."
   },
   {
-    category: "Pricing & Payments",
-    question: "Do you support payment via MTN Mobile Money and Airtel Money?",
-    answer: "Yes, absolutely! We accept payments directly via MTN Mobile Money, Airtel Money, local bank transfer in Ugandan Shillings (UGX), as well as international wire transfers (USD, EUR, GBP) and major credit cards via Stripe."
+    category: "Engagement & Milestones",
+    question: "How do you structure project milestones and scoping?",
+    answer: "Every project begins with a crystal-clear technical specification and delivery roadmap. Sprints are broken down into measurable 2-week milestones with tangible deliverables (clickable prototypes, staging previews, production deployment sign-offs) so you always have full visibility into velocity."
   },
   {
-    category: "Pricing & Payments",
-    question: "What is your typical project payment structure?",
-    answer: "For fixed-scope projects (like our Discovery Sprint or MVP Build), we operate on transparent milestone tranches: typically 40% upfront deposit to secure the sprint squad, 30% upon approval of core mid-point milestones, and 30% upon final production deployment and code transfer. For our Dedicated Squads, billing is monthly."
+    category: "Engagement & Milestones",
+    question: "How do you coordinate with our internal team during sprints?",
+    answer: "We integrate directly into your workflows. You get a dedicated Slack or WhatsApp channel, weekly recorded video walkthroughs, and access to private staging URLs where you can test live progress continuously as features are merged."
   },
   {
     category: "IP & Security",
     question: "Who owns the intellectual property and code upon project completion?",
-    answer: "You do. 100%. Upon completion of final milestone payments, full intellectual property, all GitHub repositories, Figma source files, database credentials, and production secrets are legally transferred to your company. We never retain proprietary rights or charge licensing royalties."
+    answer: "You do. 100%. Upon project sign-off and milestone delivery, full intellectual property, all GitHub repositories, Figma source files, database credentials, and production secrets are legally transferred to your company. We never retain proprietary rights or charge licensing royalties."
   },
   {
     category: "IP & Security",
@@ -38,11 +38,11 @@ export const FAQS: FAQItem[] = [
   {
     category: "Support",
     question: "What happens after the product is launched?",
-    answer: "Every custom build includes a complimentary 30-day post-launch warranty covering any unforeseen bugs or configuration adjustments. Afterwards, clients can transition to a flexible monthly retainer or on-demand support squad for feature expansions, security updates, and infrastructure scaling."
+    answer: "Every custom build includes a complimentary 30-day post-launch warranty covering any unforeseen bugs or configuration adjustments. Afterwards, clients can transition to an ongoing maintenance squad or on-demand engineering support for feature expansions, security updates, and infrastructure scaling."
   },
   {
     category: "General",
     question: "Can RENOA build both web and mobile experiences?",
-    answer: "Yes. We specialize in high-performance Progressive Web Applications (PWAs) and responsive mobile web apps that deliver app-store caliber UX on mobile browsers without requiring costly 30% app-store fee cuts or separate iOS/Android codebases. When native apps are required, we build with React Native."
+    answer: "Yes. We specialize in high-performance Progressive Web Applications (PWAs) and responsive mobile web apps that deliver app-store caliber UX on mobile browsers without app-store gatekeeping or separate iOS/Android codebases. When native apps are required, we build with React Native."
   }
 ];

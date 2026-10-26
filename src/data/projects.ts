@@ -139,7 +139,7 @@ export const ALL_PROJECTS: Project[] = [
     solution: "Merchant POS dashboard + consumer mobile web app with instant reward redemptions and zero crypto jargon.",
     results: [
       { label: "Status", value: "Testnet Beta" },
-      { label: "Gas Cost to User", value: "$0.00" },
+      { label: "Gas Cost to User", value: "Zero (Gasless)" },
       { label: "Settlement Speed", value: "< 3s" },
       { label: "Partner Merchants", value: "12 Pre-registered" }
     ]

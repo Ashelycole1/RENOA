@@ -7,7 +7,7 @@ import BookingModal from "@/components/BookingModal";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { FAQS } from "@/data/faq";
 
-const CATEGORIES = ["All", "General", "Pricing & Payments", "Process & Timeline", "IP & Security", "Support"] as const;
+const CATEGORIES = ["All", "General", "Engagement & Milestones", "Process & Timeline", "IP & Security", "Support"] as const;
 
 export default function FAQPage() {
   const [bookingOpen, setBookingOpen] = useState(false);

@@ -37,8 +37,8 @@ export default function PrivacyPage() {
             <ul className="mt-3 space-y-2 list-none">
               {[
                 "Name, email address, and phone number when you contact us or fill in our inquiry form.",
-                "Company name, project description, and budget range when booking a discovery call.",
-                "Payment details processed securely via MTN Mobile Money, Airtel Money, or Stripe (we do not store full card numbers).",
+                "Company name, project description, and target timeline when booking a discovery call.",
+                "Technical requirements and project specifications provided during project onboarding.",
                 "Messages and attachments sent via email or WhatsApp in the course of a client engagement.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
               {[
                 "Respond to inquiries and schedule discovery calls.",
                 "Deliver contracted software development services.",
-                "Issue invoices and process payments.",
+                "Coordinate project milestones and deliverable sign-offs.",
                 "Send project status updates and milestone notifications.",
                 "Improve our website and service offerings based on aggregate analytics.",
                 "Comply with legal obligations under Ugandan law, including the Uganda Data Protection and Privacy Act, 2019.",

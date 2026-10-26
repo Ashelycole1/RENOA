@@ -58,8 +58,8 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                 <span className="font-semibold text-[#111]">{service.timeline}</span>
               </div>
               <div className="inline-flex min-h-[46px] items-center gap-2 rounded-xl border border-[#00000015] bg-white px-6 text-sm">
-                <span className="font-mono text-[#9ca3af] text-xs">Starting:</span>
-                <span className="font-semibold text-[#111]">{service.startingRange.usd}</span>
+                <span className="font-mono text-[#9ca3af] text-xs">Model:</span>
+                <span className="font-semibold text-[#111]">Milestone Sprint</span>
               </div>
             </div>
           </div>
@@ -216,12 +216,12 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                     <p className="font-semibold text-[#111] text-sm">{service.timeline}</p>
                   </div>
                   <div>
-                    <span className="text-[#9ca3af] font-mono uppercase block mb-1">Starting Price (USD)</span>
-                    <p className="font-bold text-[#111] text-xl font-mono">{service.startingRange.usd}</p>
+                    <span className="text-[#9ca3af] font-mono uppercase block mb-1">Collaboration Model</span>
+                    <p className="font-semibold text-[#111] text-sm">Sprint / Embedded Squad</p>
                   </div>
                   <div>
-                    <span className="text-[#9ca3af] font-mono uppercase block mb-1">Starting Price (UGX)</span>
-                    <p className="font-medium text-[#111]">{service.startingRange.ugx}</p>
+                    <span className="text-[#9ca3af] font-mono uppercase block mb-1">Code & IP Ownership</span>
+                    <p className="font-semibold text-[#111] text-sm">100% Client-Owned</p>
                   </div>
                   <div>
                     <span className="text-[#9ca3af] font-mono uppercase block mb-1">Deliverables</span>

@@ -10,7 +10,6 @@ export interface Service {
   stack: string[];
   relatedProjectSlug: string;
   timeline: string;
-  startingRange: { usd: string; ugx: string };
   faqs: { question: string; answer: string }[];
 }
 
@@ -39,7 +38,6 @@ export const SERVICES: Service[] = [
     stack: ["Figma", "Design Tokens", "Tailwind CSS", "Whimsical", "UsabilityHub"],
     relatedProjectSlug: "renoa-brand",
     timeline: "2 – 4 weeks",
-    startingRange: { usd: "$2,500", ugx: "UGX 9,500,000" },
     faqs: [
       {
         question: "Do you provide Figma files that my internal developers can build from?",
@@ -75,7 +73,6 @@ export const SERVICES: Service[] = [
     stack: ["Next.js", "TypeScript", "React", "PostgreSQL", "Supabase", "Node.js", "Docker", "Vercel"],
     relatedProjectSlug: "driveug",
     timeline: "6 – 10 weeks",
-    startingRange: { usd: "$8,500", ugx: "UGX 32,000,000" },
     faqs: [
       {
         question: "Who owns the source code upon completion?",
@@ -83,7 +80,7 @@ export const SERVICES: Service[] = [
       },
       {
         question: "Do you support the platform after launch?",
-        answer: "Yes. Every project includes a 30-day post-launch warranty, and we offer monthly retainer squads for continuous feature development and DevOps maintenance."
+        answer: "Yes. Every project includes a 30-day post-launch warranty, and we offer dedicated engineering squads for continuous feature development and DevOps maintenance."
       }
     ]
   },
@@ -92,14 +89,14 @@ export const SERVICES: Service[] = [
     title: "AI & Automation",
     shortDesc: "Constitutional RAG systems, localized intelligence, autonomous workflow pipelines, and enterprise LLM integrations.",
     longDesc: "We take generative AI beyond toy chat interfaces into reliable business software. We build systems that reason over proprietary documents, adhere to strict regulatory compliance, and automate complex multi-step workflows with verifiable citation guardrails.",
-    promise: "Implement enterprise AI systems with verifiable accuracy, zero hallucination of critical facts, and cost-optimized latency.",
+    promise: "Implement enterprise AI systems with verifiable accuracy, zero hallucination of critical facts, and sub-second latency.",
     targetAudience: "Law firms, universities, financial institutions, and businesses with large private document bases or manual data-entry operations.",
     deliverables: [
       "Retrieval-Augmented Generation (RAG) over private documents",
       "Custom system prompt engineering & guardrail enforcement",
       "Multi-agent autonomous workflow orchestration",
       "Document ingestion, OCR, and semantic vector indexing",
-      "AI cost, token-budget, and latency optimization",
+      "AI latency, token usage, and inference architecture optimization",
       "Human-in-the-loop review dashboards"
     ],
     process: [
@@ -111,7 +108,6 @@ export const SERVICES: Service[] = [
     stack: ["Gemini 2.5 Pro/Flash", "Python", "FastAPI", "ChromaDB / pgvector", "LangChain", "Next.js"],
     relatedProjectSlug: "lawbuddy",
     timeline: "4 – 8 weeks",
-    startingRange: { usd: "$5,000", ugx: "UGX 19,000,000" },
     faqs: [
       {
         question: "Is our proprietary data used to train public AI models?",
@@ -147,7 +143,6 @@ export const SERVICES: Service[] = [
     stack: ["Figma", "Blender 3D", "Adobe Illustrator", "CSS Variables"],
     relatedProjectSlug: "renoa-brand",
     timeline: "3 – 5 weeks",
-    startingRange: { usd: "$3,000", ugx: "UGX 11,500,000" },
     faqs: [
       {
         question: "Do you supply all vector file formats for print and digital use?",
@@ -179,7 +174,6 @@ export const SERVICES: Service[] = [
     stack: ["MTN MoMo API", "Airtel Money API", "Flutterwave", "Stripe", "Next.js", "PostgreSQL"],
     relatedProjectSlug: "driveug",
     timeline: "3 – 6 weeks",
-    startingRange: { usd: "$3,500", ugx: "UGX 13,000,000" },
     faqs: [
       {
         question: "Can you help us get MTN and Airtel API approval?",

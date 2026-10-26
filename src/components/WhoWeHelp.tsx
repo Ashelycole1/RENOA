@@ -8,7 +8,7 @@ const AUDIENCES = [
     title: "Launch an MVP that Means Business",
     desc: "Stop wasting months on theoretical blueprints or fragile no-code prototypes. We architect, design, and ship production-ready web apps with payments in weeks.",
     deliverable: "6–8 week MVP build · 100% IP ownership · Mobile Money native",
-    linkText: "Explore MVP Builds",
+    linkText: "Explore Engagement Models",
     href: "/pricing"
   },
   {
@@ -23,7 +23,7 @@ const AUDIENCES = [
     tag: "LEGAL, EDTECH & CIVIC",
     title: "Grounded AI with Zero Hallucinations",
     desc: "We build domain-specific AI engines (like LAWBUDDY) trained on private statutes, local law, or specialized curricula with strict citation guardrails.",
-    deliverable: "100% cited answers · Private enterprise security · Cost-governed LLMs",
+    deliverable: "100% cited answers · Private enterprise security · Production-hardened LLMs",
     linkText: "Discover AI & Automation",
     href: "/services/ai-automation"
   },
@@ -31,7 +31,7 @@ const AUDIENCES = [
     tag: "GLOBAL TEAMS & BUYERS",
     title: "Senior Product Squads with Timezone Overlap",
     desc: "Hire dedicated East African engineering and product design squads in Kampala (EAT · UTC+3), with 4–6 hours of clean overlap with Europe and the US.",
-    deliverable: "Senior talent · Direct founder access · Global quality at African cost-efficiency",
+    deliverable: "Senior talent · Direct founder access · Global quality with high-velocity engineering",
     linkText: "Meet the Team",
     href: "/about"
   }

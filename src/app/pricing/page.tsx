@@ -9,30 +9,26 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { ENGAGEMENT_MODELS } from "@/data/pricing";
 import { SERVICES } from "@/data/services";
 
-const FAQS_PRICING = [
+const FAQS_MODELS = [
   {
-    q: "Are prices fixed or negotiable?",
-    a: "Fixed-scope projects have transparent starting prices. Dedicated squads and enterprise work are scoped per engagement. We never charge for surprise extras — every change is approved through a formal change order.",
+    q: "How do you scope a project before kickoff?",
+    a: "We break every engagement into clear deliverable milestones with defined technical specifications. Before kickoff, you receive a detailed sprint roadmap so expectations, deliverables, and timelines are 100% aligned.",
   },
   {
-    q: "Do you accept payment in UGX?",
-    a: "Yes. We accept UGX via bank transfer, MTN MoMo, and Airtel Money for Ugandan clients. USD via Wise, Payoneer, or bank wire for international clients.",
+    q: "Can we start with a Discovery Sprint and then transition to a build?",
+    a: "Yes. Most clients start with a 2-week Discovery Sprint to validate user flows, design prototypes, and define technical architecture before committing to a full production build.",
   },
   {
-    q: "What is the payment schedule?",
-    a: "Discovery Sprint: 50% upfront, 50% on delivery. MVP builds: 40% on contract, 30% at mid-sprint, 30% on final delivery. Squads: monthly in advance.",
-  },
-  {
-    q: "Can we start with a Discovery Sprint and then move to a build?",
-    a: "Absolutely. Most clients start with a 2-week Discovery Sprint to validate product direction and get an accurate build estimate before committing to a full build.",
-  },
-  {
-    q: "Who owns the code and IP?",
-    a: "You do. 100%. We transfer all git repositories, database credentials, design files, and cloud infrastructure accounts to you upon final payment. No vendor lock-in.",
+    q: "Who owns the code and intellectual property?",
+    a: "You do. 100%. We transfer all git repositories, database credentials, design files, and cloud infrastructure accounts to you upon milestone sign-off. Zero vendor lock-in.",
   },
   {
     q: "What support is included after launch?",
-    a: "All builds include a 30-day post-launch warranty covering bug fixes. Beyond that, we offer Monthly Retainer Squads starting from $2,000/month for continuous support and feature development.",
+    a: "All production builds include a 30-day post-launch warranty covering defect resolution. Beyond that, we offer flexible dedicated product squads for continuous feature shipping and DevOps maintenance.",
+  },
+  {
+    q: "How does our team collaborate with RENOA during a sprint?",
+    a: "We maintain daily asynchronous communication via dedicated Slack or WhatsApp channels, run scheduled bi-weekly sprint demo reviews, and share click-through staging deployments at every milestone.",
   },
 ];
 
@@ -47,17 +43,18 @@ export default function PricingPage() {
       <main className="pt-32 pb-24">
         {/* Header */}
         <div className="wrapper max-w-[1160px] mb-16 space-y-4">
-          <span className="label">TRANSPARENT PRICING</span>
+          <span className="label">ENGAGEMENT MODELS</span>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-[#111]">
-            Honest pricing, zero surprises.
+            How we partner with you.
           </h1>
           <p className="max-w-2xl text-base md:text-lg text-[var(--text-secondary)] leading-relaxed">
-            We publish our starting prices so you can self-qualify before booking a call. Every engagement includes
-            full IP transfer, source code ownership, and a clearly scoped deliverable list.
+            Structured collaboration models designed for every stage — whether de-risking a new concept,
+            launching a production MVP, or scaling dedicated engineering velocity. Every engagement includes
+            full IP transfer and direct engineer access.
           </p>
         </div>
 
-        {/* Pricing Cards */}
+        {/* Engagement Model Cards */}
         <section className="wrapper max-w-[1160px] mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {ENGAGEMENT_MODELS.map((m) => (
@@ -77,16 +74,12 @@ export default function PricingPage() {
                   )}
                   <div>
                     <h2 className="text-xl font-bold text-[#111]">{m.name}</h2>
-                    <p className="text-xs text-[#6b7280] font-mono mt-0.5">{m.timeline}</p>
+                    <p className="text-xs text-[var(--accent)] font-mono font-semibold mt-1">
+                      Timeline: {m.timeline}
+                    </p>
                   </div>
 
                   <p className="text-xs leading-relaxed text-[var(--text-secondary)]">{m.tagline}</p>
-
-                  <div className="pt-2">
-                    <span className="text-3xl font-bold text-[#111] font-mono">{m.priceUSD}</span>
-                    <span className="text-xs text-[#9ca3af] ml-1.5 font-mono">/ {m.cadence}</span>
-                    <p className="text-[11px] text-[#9ca3af] font-mono mt-0.5">{m.priceUGX}</p>
-                  </div>
 
                   <div className="text-xs text-[var(--text-secondary)] bg-[#f9fafb] rounded-lg p-3 border border-[#00000006]">
                     <span className="font-semibold text-[#111] block mb-1">Ideal for:</span>
@@ -120,24 +113,24 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* Service Starting Prices */}
+        {/* Service Scope & Timelines Table */}
         <section className="border-t border-[#0000000d] bg-[#fafafa] py-20 mb-0">
           <div className="wrapper max-w-[1160px]">
             <div className="mb-12">
-              <span className="label">SERVICE PRICING</span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-[#111]">By service area.</h2>
+              <span className="label">SERVICE SCOPE</span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-[#111]">By service capability.</h2>
               <p className="mt-4 max-w-xl text-base text-[var(--text-secondary)] leading-relaxed">
-                Individual services can be packaged with an engagement model above or scoped independently.
+                Individual capabilities can be packaged into an engagement model above or scoped for targeted product sprints.
               </p>
             </div>
             <div className="overflow-x-auto rounded-2xl border border-[#0000000d] bg-white shadow-xs">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-[#0000000d]">
-                    <th className="text-left px-6 py-4 text-xs font-mono font-bold uppercase tracking-wider text-[#9ca3af]">Service</th>
-                    <th className="text-left px-6 py-4 text-xs font-mono font-bold uppercase tracking-wider text-[#9ca3af]">Timeline</th>
-                    <th className="text-left px-6 py-4 text-xs font-mono font-bold uppercase tracking-wider text-[#9ca3af]">Starting (USD)</th>
-                    <th className="text-left px-6 py-4 text-xs font-mono font-bold uppercase tracking-wider text-[#9ca3af]">Starting (UGX)</th>
+                    <th className="text-left px-6 py-4 text-xs font-mono font-bold uppercase tracking-wider text-[#9ca3af]">Service Capability</th>
+                    <th className="text-left px-6 py-4 text-xs font-mono font-bold uppercase tracking-wider text-[#9ca3af]">Typical Timeline</th>
+                    <th className="text-left px-6 py-4 text-xs font-mono font-bold uppercase tracking-wider text-[#9ca3af]">Deliverables Count</th>
+                    <th className="text-left px-6 py-4 text-xs font-mono font-bold uppercase tracking-wider text-[#9ca3af]">Primary Focus</th>
                     <th className="px-6 py-4" />
                   </tr>
                 </thead>
@@ -146,11 +139,11 @@ export default function PricingPage() {
                     <tr key={s.slug} className={`border-b border-[#0000000d] hover:bg-[#fafafa] transition-colors ${i === SERVICES.length - 1 ? "border-b-0" : ""}`}>
                       <td className="px-6 py-4 font-semibold text-[#111]">{s.title}</td>
                       <td className="px-6 py-4 font-mono text-xs text-[#6b7280]">{s.timeline}</td>
-                      <td className="px-6 py-4 font-mono text-sm font-bold text-[#111]">{s.startingRange.usd}</td>
-                      <td className="px-6 py-4 font-mono text-xs text-[#6b7280]">{s.startingRange.ugx}</td>
+                      <td className="px-6 py-4 font-mono text-xs text-[#111] font-semibold">{s.deliverables.length} Key Outputs</td>
+                      <td className="px-6 py-4 text-xs text-[#6b7280] max-w-xs truncate">{s.promise}</td>
                       <td className="px-6 py-4 text-right">
                         <Link href={`/services/${s.slug}`} className="text-xs font-semibold text-[var(--accent)] hover:underline">
-                          Details →
+                          Specs →
                         </Link>
                       </td>
                     </tr>
@@ -164,11 +157,11 @@ export default function PricingPage() {
         {/* FAQs */}
         <section className="wrapper max-w-[1160px] py-20">
           <div className="mb-12">
-            <span className="label">PRICING FAQ</span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-[#111]">Common questions.</h2>
+            <span className="label">COLLABORATION FAQ</span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-[#111]">Frequently asked questions.</h2>
           </div>
           <div className="max-w-2xl space-y-3">
-            {FAQS_PRICING.map((faq, i) => (
+            {FAQS_MODELS.map((faq, i) => (
               <div
                 key={i}
                 className="rounded-2xl border border-[#0000000d] bg-white overflow-hidden"
@@ -198,12 +191,12 @@ export default function PricingPage() {
         {/* CTA */}
         <div className="wrapper max-w-[1160px]">
           <div className="rounded-2xl border border-[#0000000d] bg-white p-8 md:p-14 text-center space-y-4 shadow-sm">
-            <span className="label">GET A CUSTOM QUOTE</span>
+            <span className="label">DISCUSS YOUR PROJECT</span>
             <h3 className="text-3xl font-bold text-[#111]">
               Not sure which model is right for you?
             </h3>
             <p className="text-sm md:text-base text-[var(--text-secondary)] max-w-lg mx-auto">
-              Book a free 30-minute call with our engineering leads. We review your requirements, budget, and timeline,
+              Book a free 30-minute call with our engineering leads. We review your requirements, technical architecture, and timeline,
               and give you an honest recommendation — no sales pressure.
             </p>
             <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
@@ -211,15 +204,15 @@ export default function PricingPage() {
                 onClick={() => setBookingOpen(true)}
                 className="inline-flex min-h-[46px] items-center gap-2 rounded-xl bg-[var(--accent)] px-8 text-sm font-semibold text-white transition-colors hover:bg-[var(--accent-hover)]"
               >
-                Book a free call
+                Book a discovery call
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </button>
-              <a
-                href="mailto:hello@renoa.tech"
+              <Link
+                href="/contact#inquiry"
                 className="inline-flex min-h-[46px] items-center gap-2 rounded-xl border border-[#00000015] bg-white px-7 text-sm font-medium text-[#111] hover:bg-[#fafafa]"
               >
-                Email us
-              </a>
+                Send project inquiry
+              </Link>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ const SECURITY_PRACTICES = [
   {
     icon: "📋",
     title: "NDA & Contractual Protection",
-    desc: "We sign mutual NDAs before reviewing proprietary specifications. All client IP is transferred upon final payment with full legal clarity.",
+    desc: "We sign mutual NDAs before reviewing proprietary specifications. All client IP is transferred upon project sign-off with full legal clarity.",
   },
   {
     icon: "🚀",
@@ -47,7 +47,7 @@ const COMPLIANCE = [
   { label: "Data Protection Law", value: "Uganda Data Protection and Privacy Act, 2019" },
   { label: "AI Data Policy", value: "Private enterprise APIs — zero public model training" },
   { label: "Payment Security", value: "MTN & Airtel Production KYC compliant" },
-  { label: "Code Ownership", value: "100% IP transfer on final payment" },
+  { label: "Code Ownership", value: "100% IP transfer upon project sign-off" },
   { label: "NDA Availability", value: "Mutual NDA on request, signed before project kickoff" },
   { label: "Breach Notification", value: "Clients notified within 72 hours of any security incident" },
 ];

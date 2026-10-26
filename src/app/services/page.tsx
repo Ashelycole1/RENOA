@@ -75,7 +75,7 @@ export default function ServicesPage() {
                     View detailed specs →
                   </Link>
                   <span className="font-mono text-[#6b7280]">
-                    From {s.startingRange.usd}
+                    {s.timeline}
                   </span>
                 </div>
               </div>
@@ -120,8 +120,9 @@ export default function ServicesPage() {
                     </p>
 
                     <div className="pt-2">
-                      <span className="text-2xl font-bold text-[#111] font-mono">{m.priceUSD}</span>
-                      <span className="text-xs text-[#9ca3af] ml-1.5 font-mono">/ {m.cadence}</span>
+                      <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--accent)] font-mono">
+                        {m.idealFor}
+                      </span>
                     </div>
 
                     <ul className="space-y-1.5 text-xs text-[#4b5563] pt-2 border-t border-[#00000008]">
@@ -170,7 +171,7 @@ export default function ServicesPage() {
                 href="/pricing"
                 className="inline-flex min-h-[46px] items-center gap-2 rounded-xl border border-[#00000015] bg-white px-7 text-sm font-medium text-[#111] hover:bg-[#fafafa]"
               >
-                View pricing & models
+                Explore engagement models
               </Link>
             </div>
           </div>

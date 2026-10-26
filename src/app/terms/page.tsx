@@ -36,7 +36,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-bold text-[#111] mb-3">3. Intellectual Property & Ownership</h2>
             <p className="leading-relaxed">
-              Upon full payment of all project milestones, all intellectual property, source code, design files, database schemas,
+              Upon project completion and sign-off of agreed milestones, all intellectual property, source code, design files, database schemas,
               and deliverables created for the client are transferred fully to the client. RENOA retains no licensing rights over
               delivered work.
             </p>
@@ -48,17 +48,17 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#111] mb-3">4. Payment Terms</h2>
+            <h2 className="text-xl font-bold text-[#111] mb-3">4. Engagement & Milestone Terms</h2>
             <p className="leading-relaxed">
-              Payment schedules are defined per engagement in the project contract. Standard terms:
+              Sprint milestones and review cadences are defined per engagement in the project Statement of Work. Standard terms:
             </p>
             <ul className="mt-3 space-y-2 list-none">
               {[
-                "Fixed-scope projects: 40% on signing, 30% at mid-point milestone, 30% on delivery.",
-                "Discovery Sprints: 50% on signing, 50% on delivery.",
-                "Monthly squads: invoiced monthly in advance.",
-                "Late payments beyond 14 days may attract a 2% monthly interest charge.",
-                "Final deliverables (code repositories, design files) are transferred only after full payment.",
+                "Fixed-scope projects: structured across architecture, mid-sprint preview, and production deployment sign-offs.",
+                "Discovery Sprints: sprint delivery and roadmap presentation within 2 weeks.",
+                "Dedicated squads: sprint planning on 2-week agile intervals with weekly async progress demos.",
+                "Deliverables are reviewed and approved against defined acceptance criteria in the Statement of Work.",
+                "Final deliverables (code repositories, design files, deployment environments) are transferred upon milestone sign-off.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] shrink-0 mt-2" />
@@ -72,7 +72,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold text-[#111] mb-3">5. Change Orders & Scope</h2>
             <p className="leading-relaxed">
               Any features, integrations, or deliverables outside the agreed Statement of Work require a written Change Order
-              approved by both parties. Change orders are priced transparently and added to the project total before work begins.
+              approved by both parties. Change orders are evaluated transparently and added to the project scope before work begins.
               RENOA will never perform unscoped work without client authorization.
             </p>
           </section>
@@ -99,7 +99,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold text-[#111] mb-3">8. Limitation of Liability</h2>
             <p className="leading-relaxed">
               To the maximum extent permitted by Ugandan law, RENOA's total liability for any claims arising from a project
-              shall not exceed the total fees paid by the client for that specific engagement. RENOA is not liable for indirect,
+              shall not exceed the total contracted engagement value for that specific project. RENOA is not liable for indirect,
               consequential, or incidental damages including lost profits.
             </p>
           </section>
@@ -126,7 +126,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold text-[#111] mb-3">11. Website Usage</h2>
             <p className="leading-relaxed">
               The content on renoa.tech is for informational purposes only. RENOA makes no warranties regarding the
-              completeness, accuracy, or fitness for a particular purpose of any website content. Pricing and availability
+              completeness, accuracy, or fitness for a particular purpose of any website content. Scope and availability
               are subject to change without notice.
             </p>
           </section>
